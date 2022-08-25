@@ -1,0 +1,1 @@
+My personal site made in [Hugo](https://gohugo.io/), with the [Bear Blog theme](https://github.com/janraasch/hugo-bearblog).

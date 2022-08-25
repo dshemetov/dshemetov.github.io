@@ -1,0 +1,16 @@
+baseUrl = "https://dshemetov.github.io"
+theme = "hugo-bearblog"
+title = "┐｜･ิω･ิ#｜┌ Dmitry's Online Webpage"
+author = "Dmitry Shemetov"
+copyright = "Copyright © 2023"
+languageCode = "en-us"
+enableRobotsTXT = true
+
+[[menu.main]]
+name = "Projects"
+url = "/projects/"
+
+[params]
+images = ["https://dshemetov.github.io/images/math-dmitry.jpg"]
+mathjax = true
+custom_css = "assets/css/custom.css"
