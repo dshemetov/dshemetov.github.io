@@ -3,6 +3,10 @@ title: "Euler-Maclaurin Formula"
 date: 2022-08-31T09:58:27-07:00
 draft: false
 toc: true
+tags: [
+    "math",
+    "asymptotics"
+]
 ---
 
 In the [math test post](/blog/binomial-poisson), we briefly discussed how to arrive at Stirling's approximation.

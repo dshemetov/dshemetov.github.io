@@ -1,9 +1,11 @@
 ---
 title: Math Blogging
 date: 2019-11-07
-taxonomies:
-    categories: math
-    tags: math cute
+tags: [
+    "math",
+    "blogging",
+    "hugo"
+]
 draft: false
 ---
 

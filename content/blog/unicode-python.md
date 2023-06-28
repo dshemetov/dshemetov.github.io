@@ -2,6 +2,10 @@
 title: "Unicode, String Encodings, and Python"
 date: 2022-09-01T11:20:59-07:00
 draft: false
+toc: true
+tags: [
+    "python"
+]
 ---
 
 I've been working on the [cryptopals challenges](https://www.cryptopals.com/) and avoiding stock libraries, to learn more about string encodings and the `bytes` type in Python 3.

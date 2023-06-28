@@ -10,6 +10,10 @@ enableRobotsTXT = true
 name = "Projects"
 url = "/projects/"
 
+[permalinks]
+blog = "/:slug/"
+tags = "/blog/:slug"
+
 [params]
 images = ["https://dshemetov.github.io/images/math-dmitry.jpg"]
 mathjax = true

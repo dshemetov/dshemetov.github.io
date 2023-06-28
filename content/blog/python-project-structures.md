@@ -3,6 +3,9 @@ title: "Python Project Structures"
 date: 2022-09-02T17:29:37-07:00
 draft: false
 toc: true
+tags: [
+    "python"
+]
 ---
 
 Python project structures are confusing. Let's make them less so.

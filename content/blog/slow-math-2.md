@@ -2,6 +2,11 @@
 title: "Fast Algorithms for $\\pi$ and Elliptic Integrals"
 date: 2023-03-05T14:04:04-08:00
 draft: false
+toc: true
+tags: [
+	"math",
+	"number theory"
+]
 ---
 
 On this installment of Chill Math Friends, we learned a bit about a fast algorithm for $\pi$ and elliptic integrals.
