@@ -1,0 +1,143 @@
+<!doctype html><html lang=en-us><head><meta http-equiv=x-clacks-overhead content="GNU Terry Pratchett"><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Python Project Structures | ┐｜･ิω･ิ#｜┌ Dmitry's Online Webpage</title><meta name=title content="Python Project Structures"><meta name=description content="Python project structures are confusing. Let&rsquo;s make them less so.
+Terminology First, a few standard Python terminology definitions:
+a module is a single Python script, a package is a collection of modules.1 A project may be an application or a library:
+an application is a program that is meant to be deployed, such as a simple script, a server, or a Discord bot, a library is a package that will be imported by other libraries or applications."><meta name=keywords content="python,"><meta property="og:title" content="Python Project Structures"><meta property="og:description" content="Python project structures are confusing. Let&rsquo;s make them less so.
+Terminology First, a few standard Python terminology definitions:
+a module is a single Python script, a package is a collection of modules.1 A project may be an application or a library:
+an application is a program that is meant to be deployed, such as a simple script, a server, or a Discord bot, a library is a package that will be imported by other libraries or applications."><meta property="og:type" content="article"><meta property="og:url" content="https://dshemetov.github.io/python-project-structures/"><meta property="og:image" content="https://dshemetov.github.io/images/math-dmitry.jpg"><meta property="article:section" content="blog"><meta property="article:published_time" content="2022-09-02T17:29:37-07:00"><meta property="article:modified_time" content="2022-09-02T17:29:37-07:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://dshemetov.github.io/images/math-dmitry.jpg"><meta name=twitter:title content="Python Project Structures"><meta name=twitter:description content="Python project structures are confusing. Let&rsquo;s make them less so.
+Terminology First, a few standard Python terminology definitions:
+a module is a single Python script, a package is a collection of modules.1 A project may be an application or a library:
+an application is a program that is meant to be deployed, such as a simple script, a server, or a Discord bot, a library is a package that will be imported by other libraries or applications."><meta itemprop=name content="Python Project Structures"><meta itemprop=description content="Python project structures are confusing. Let&rsquo;s make them less so.
+Terminology First, a few standard Python terminology definitions:
+a module is a single Python script, a package is a collection of modules.1 A project may be an application or a library:
+an application is a program that is meant to be deployed, such as a simple script, a server, or a Discord bot, a library is a package that will be imported by other libraries or applications."><meta itemprop=datePublished content="2022-09-02T17:29:37-07:00"><meta itemprop=dateModified content="2022-09-02T17:29:37-07:00"><meta itemprop=wordCount content="783"><meta itemprop=image content="https://dshemetov.github.io/images/math-dmitry.jpg"><meta itemprop=keywords content="python,"><meta name=referrer content="no-referrer-when-downgrade"><style>body{font-family:Verdana,sans-serif;margin:auto;padding:20px;max-width:720px;text-align:left;background-color:#fff;word-wrap:break-word;overflow-wrap:break-word;line-height:1.5;color:#444}h1,h2,h3,h4,h5,h6,strong,b{color:#222}a{color:#3273dc}.title{text-decoration:none;border:0}.title span{font-weight:400}nav a{margin-right:10px}textarea{width:100%;font-size:16px}input{font-size:16px}content{line-height:1.6}table{width:100%}img{max-width:100%}code{padding:2px 5px;background-color:#f2f2f2}pre code{color:#222;display:block;padding:20px;white-space:pre-wrap;font-size:14px;overflow-x:auto}div.highlight pre{background-color:initial;color:initial}div.highlight code{background-color:unset;color:unset}blockquote{border-left:1px solid #999;color:#222;padding-left:20px;font-style:italic}footer{padding:25px;text-align:center}.helptext{color:#777;font-size:small}.errorlist{color:#eba613;font-size:small}ul.blog-posts{list-style-type:none;padding:unset}ul.blog-posts li{display:flex}ul.blog-posts li span{flex:0 0 130px}ul.blog-posts li a:visited{color:#8b6fcb}@media(prefers-color-scheme:dark){body{background-color:#333;color:#ddd}h1,h2,h3,h4,h5,h6,strong,b{color:#eee}a{color:#8cc2dd}code{background-color:#777}pre code{color:#ddd}blockquote{color:#ccc}textarea,input{background-color:#252525;color:#ddd}.helptext{color:#aaa}}</style><script>MathJax={loader:{load:["[tex]/mathtools"]},tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:!0,processEnvironments:!0,macros:{R:"{\\mathbb R}",Z:"{\\mathbb Z}",C:"{\\mathbb C}"},packages:{"[+]":["mathtools"]}},options:{skipHtmlTags:["script","noscript","style","textarea","pre"]}},window.addEventListener("load",e=>{document.querySelectorAll("mjx-container").forEach(function(e){e.parentElement.classList+="has-jax"})})</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type=text/javascript id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><style type=text/css>body{background-color:#1a2638}a{text-decoration:none}a:hover{text-decoration:underline}ol li{counter-increment:listCounter}ol li::marker{content:'(' counter(listCounter)").  "}figure{text-align:center;font-style:italic;font-size:smaller;text-indent:0;display:block;margin-left:auto;margin-right:auto;max-width:75%}figure.left{float:left;margin-right:2em;max-width:75%}figure.right{float:right;margin-left:2em;max-width:75%}@media(max-width:800px){figure.left,figure.right{float:none;margin-top:2em;margin-bottom:2em;margin-right:2em;margin-left:2em;max-width:50%}}.common-footer{margin-top:1em;padding-top:1em}.content{margin-top:1em}code.has-jax{-webkit-font-smoothing:antialiased;background:inherit!important;border:none!important;font-size:100%}</style><meta property="og:type" content="website"><meta property="og:url" content><meta property="og:title" content><meta property="og:description" content><meta property="og:image" content><meta name=description content="Python project structures are confusing. Let&rsquo;s make them less so.
+Terminology First, a few standard Python terminology definitions:
+a module is a single Python script, a package is a collection of modules.1 A project may be an application or a library:
+an application is a program that is meant to be deployed, such as a simple script, a server, or a Discord bot, a library is a package that will be imported by other libraries or applications."></head><body><header><a href=/ class=title><h2>┐｜･ิω･ิ#｜┌ Dmitry's Online Webpage</h2></a><nav><a href=/>Home</a>
+<a href=/projects/>Projects</a>
+<a href=/blog>Blog</a></nav></header><main><h1>Python Project Structures</h1><p><i><time datetime=2022-09-02 pubdate>02 Sep, 2022</time></i></p><aside><h1>Table of Contents</h1><nav id=TableOfContents><ul><li><a href=#terminology>Terminology</a></li><li><a href=#project-structures>Project Structures</a></li><li><a href=#python-imports>Python Imports</a><ul><li><a href=#imports-in-tests>Imports in Tests</a></li><li><a href=#imports-between-subpackages>Imports Between Subpackages</a></li><li><a href=#but-what-about-relative-imports>But What About Relative Imports?</a></li></ul></li><li><a href=#a-word-on-pyprojecttoml>A Word On <code>pyproject.toml</code></a></li><li><a href=#references>References</a></li><li><a href=#footnotes>Footnotes</a></li></ul></nav></aside><content><p>Python project structures are confusing. Let&rsquo;s make them less so.</p><h2 id=terminology>Terminology</h2><p>First, a few standard Python terminology definitions:</p><ul><li>a <strong>module</strong> is a single Python script,</li><li>a <strong>package</strong> is a collection of modules.<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup></li></ul><p>A project may be an application or a library:</p><ul><li>an <strong>application</strong> is a program that is meant to be deployed, such as a simple script, a server, or a Discord bot,</li><li>a <strong>library</strong> is a package that will be imported by other libraries or applications.</li></ul><h2 id=project-structures>Project Structures</h2><p>There are a few recommended, <a href=https://docs.python-guide.org/writing/structure/>best-practice Python project structures</a>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span><span style=color:#75715e># A &#34;src-layout&#34; Structure</span>
+</span></span><span style=display:flex><span>project_root/
+</span></span><span style=display:flex><span>    docs/
+</span></span><span style=display:flex><span>        conf.py
+</span></span><span style=display:flex><span>        index.md
+</span></span><span style=display:flex><span>    src/
+</span></span><span style=display:flex><span>        package/
+</span></span><span style=display:flex><span>            __init__.py
+</span></span><span style=display:flex><span>            module.py
+</span></span><span style=display:flex><span>    tests/
+</span></span><span style=display:flex><span>        __init__.py
+</span></span><span style=display:flex><span>        test_module.py
+</span></span><span style=display:flex><span>    README.md
+</span></span><span style=display:flex><span>    LICENSE
+</span></span><span style=display:flex><span>    pyproject.toml
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># A Simpler &#34;src-layout&#34; with Tests In Package</span>
+</span></span><span style=display:flex><span>project_root/
+</span></span><span style=display:flex><span>    docs/
+</span></span><span style=display:flex><span>        conf.py
+</span></span><span style=display:flex><span>        index.md
+</span></span><span style=display:flex><span>    package/
+</span></span><span style=display:flex><span>        __init__.py
+</span></span><span style=display:flex><span>        module.py
+</span></span><span style=display:flex><span>        tests/
+</span></span><span style=display:flex><span>            __init__.py
+</span></span><span style=display:flex><span>            test_module.py
+</span></span><span style=display:flex><span>    README.md
+</span></span><span style=display:flex><span>    LICENSE
+</span></span><span style=display:flex><span>    pyproject.toml
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># A Simpler &#34;src-layout&#34; Structure</span>
+</span></span><span style=display:flex><span>project_root/
+</span></span><span style=display:flex><span>    docs/
+</span></span><span style=display:flex><span>        conf.py
+</span></span><span style=display:flex><span>        index.md
+</span></span><span style=display:flex><span>    package/
+</span></span><span style=display:flex><span>        __init__.py
+</span></span><span style=display:flex><span>        module.py
+</span></span><span style=display:flex><span>    tests/
+</span></span><span style=display:flex><span>        __init__.py
+</span></span><span style=display:flex><span>        test_module.py
+</span></span><span style=display:flex><span>    README.md
+</span></span><span style=display:flex><span>    LICENSE
+</span></span><span style=display:flex><span>    pyproject.toml
+</span></span></code></pre></div><p>My personal preference is option 3:</p><ul><li>in option 1, the extra <code>src</code> folder has never been necessary to me,</li><li>in option 2, I don&rsquo;t think it&rsquo;s a good idea to include tests <em>inside your package folder</em>, because it introduces unnecessary bloat to users that aren&rsquo;t developers.</li></ul><h2 id=python-imports>Python Imports</h2><p>Suppose that we go with option 3.</p><h3 id=imports-in-tests>Imports in Tests</h3><p>How can we import functions from <code>module.py</code> into tests?
+The following is good enough.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py><span style=display:flex><span><span style=color:#75715e># test_module.py</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> package.module <span style=color:#f92672>import</span> module_func
+</span></span></code></pre></div><p>If you use pytest, you can run <code>pytest .</code> in either in <code>project_root</code>, or in <code>project_root/tests</code> and the imports work just fine.
+This is because <code>pytest</code> can find the project root by first discovering tests in subfolders, traversing up the directory hierarchy until it finds a directory without tests, and appends that to Python path.
+See <a href=https://docs.pytest.org/en/7.1.x/explanation/pythonpath.html#test-modules-conftest-py-files-inside-packages>here for more</a> and <a href=https://stackoverflow.com/a/50610630/4784655>here if you want to modify <code>pytest</code>&rsquo;s Python path</a>.</p><h3 id=imports-between-subpackages>Imports Between Subpackages</h3><p>Now suppose you have a subpackage <code>utils</code>.
+How can we import this into <code>package/module.py</code>?</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>project_root/
+</span></span><span style=display:flex><span>    docs/
+</span></span><span style=display:flex><span>        conf.py
+</span></span><span style=display:flex><span>        index.md
+</span></span><span style=display:flex><span>    package/
+</span></span><span style=display:flex><span>        __init__.py
+</span></span><span style=display:flex><span>        module.py
+</span></span><span style=display:flex><span>    utils/
+</span></span><span style=display:flex><span>        __init__.py
+</span></span><span style=display:flex><span>        tool.py
+</span></span><span style=display:flex><span>    tests/
+</span></span><span style=display:flex><span>        __init__.py
+</span></span><span style=display:flex><span>        test_module.py
+</span></span><span style=display:flex><span>    runner.py
+</span></span><span style=display:flex><span>    README.md
+</span></span><span style=display:flex><span>    LICENSE
+</span></span><span style=display:flex><span>    pyproject.toml
+</span></span></code></pre></div><p>The same answer as before works, but under a few conditions.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py><span style=display:flex><span><span style=color:#75715e># module.py</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> utils.tool <span style=color:#f92672>import</span> util_func
+</span></span></code></pre></div><p>The main condition is that the file that eventually runs your code needs to be in the top-level directory, e.g. <code>python runner.py</code>.
+What you <em>couldn&rsquo;t</em> do, is run this in <code>/project_root</code> dir</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>python package/module.py
+</span></span></code></pre></div><p>because its <a href="https://docs.python.org/3/library/sys.html?highlight=sys%20path#sys.path"><code>sys.path</code> variable</a> would not contain the <code>utils</code> package and you will get an error.</p><p>Instead you could use the <code>-m</code> flag to run as module</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>python -m package.module
+</span></span></code></pre></div><p>(note the missing file extension and the directory slash replaced by a period).</p><p>Another option is to modify <code>sys.path</code> in <code>package/module.py</code> like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py><span style=display:flex><span><span style=color:#75715e># module.py</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> sys
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> os
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>sys<span style=color:#f92672>.</span>path<span style=color:#f92672>.</span>append(os<span style=color:#f92672>.</span>path<span style=color:#f92672>.</span>join(os<span style=color:#f92672>.</span>path<span style=color:#f92672>.</span>dirname(os<span style=color:#f92672>.</span>path<span style=color:#f92672>.</span>abspath(__file__)), os<span style=color:#f92672>.</span>pardir))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> utils.tool <span style=color:#f92672>import</span> util_func
+</span></span></code></pre></div><p>Personally, these do not spark joy.
+My solution so far has been:</p><ul><li>for applications, the executable script is a top-level script outside the packages<ul><li>if you have submodules with code you want to execute, create a <code>runner.py</code> script that imports their code and executes it</li></ul></li><li>for libraries, don&rsquo;t worry about it (hasn&rsquo;t ever been an issue).</li></ul><h3 id=but-what-about-relative-imports>But What About Relative Imports?</h3><p>This is not very deep, but:</p><ul><li>relative imports won&rsquo;t fix the issues with directly executing submodules,</li><li>relative imports won&rsquo;t let you import something that you can&rsquo;t import with an absolute import (I&rsquo;m pretty sure, but I&rsquo;d like to find a Guido quote for this or something).</li></ul><p>So maybe just don&rsquo;t?</p><p>See the top answer <a href=https://stackoverflow.com/questions/14132789/relative-imports-for-the-billionth-time>to understand relative imports and their limitations</a>.</p><h2 id=a-word-on-pyprojecttoml>A Word On <code>pyproject.toml</code></h2><p>The Python community appears to have organized around using <code>pyproject.toml</code> to specify</p><ul><li>package metadata</li><li>build dependencies and environments</li><li>tool configurations</li></ul><p>See <a href=https://peps.python.org/pep-0518/>PEP-518</a> and <a href=https://peps.python.org/pep-0621/>PEP-621</a> for official specifications.</p><p>This deprecates many configuration files, such as</p><ul><li><code>.pylintrc</code></li><li><code>setup.py</code></li><li><code>setup.cfg</code></li><li><code>requirements.txt</code></li></ul><p>Many other tools, such as <code>black</code> and <code>pytest</code> already support setting their configurations in <code>pyproject.toml</code> as well.</p><p>For a little history and an introduction to the file, see <a href=https://snarky.ca/what-the-heck-is-pyproject-toml/>Brett Cannon&rsquo;s blog post</a> (Brett is one of the authors of PEP-518 and related PEPs).</p><p>Here is a sample <code>pyproject.toml</code> for a package that uses the <code>setuptools</code> backend.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-toml data-lang=toml><span style=display:flex><span>[<span style=color:#a6e22e>build-system</span>]
+</span></span><span style=display:flex><span><span style=color:#a6e22e>requires</span> = [<span style=color:#e6db74>&#34;setuptools&#34;</span>]
+</span></span><span style=display:flex><span><span style=color:#a6e22e>build-backend</span> = <span style=color:#e6db74>&#34;setuptools.build_meta&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>[<span style=color:#a6e22e>project</span>]
+</span></span><span style=display:flex><span><span style=color:#a6e22e>name</span> = <span style=color:#e6db74>&#34;package_name&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>version</span> = <span style=color:#e6db74>&#34;0.1.0&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>description</span> = <span style=color:#e6db74>&#34;Useful utilities&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>readme</span> = <span style=color:#e6db74>&#34;README.md&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>requires-python</span> = <span style=color:#e6db74>&#34;&gt;=3.10&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>authors</span> = [
+</span></span><span style=display:flex><span>  {<span style=color:#a6e22e>email</span> = <span style=color:#e6db74>&#34;&#34;</span>},
+</span></span><span style=display:flex><span>  {<span style=color:#a6e22e>name</span> = <span style=color:#e6db74>&#34;&#34;</span>}
+</span></span><span style=display:flex><span>]
+</span></span><span style=display:flex><span><span style=color:#a6e22e>classifiers</span> = [
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;Development Status :: 4 - Beta&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;Programming Language :: Python&#34;</span>
+</span></span><span style=display:flex><span>]
+</span></span><span style=display:flex><span><span style=color:#a6e22e>dependencies</span> = [
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;joblib&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;more-itertools&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;numpy&#34;</span>
+</span></span><span style=display:flex><span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>[<span style=color:#a6e22e>project</span>.<span style=color:#a6e22e>urls</span>]
+</span></span><span style=display:flex><span><span style=color:#a6e22e>repository</span> = <span style=color:#e6db74>&#34;&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>[<span style=color:#a6e22e>tool</span>.<span style=color:#a6e22e>setuptools</span>]
+</span></span><span style=display:flex><span><span style=color:#75715e># To specify specific folders or modules to install</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>py-modules</span> = [<span style=color:#e6db74>&#34;package_folder&#34;</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>[<span style=color:#a6e22e>tool</span>.<span style=color:#a6e22e>black</span>]
+</span></span><span style=display:flex><span><span style=color:#a6e22e>line-length</span> = <span style=color:#ae81ff>180</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>target-version</span> = [<span style=color:#e6db74>&#39;py310&#39;</span>]
+</span></span><span style=display:flex><span><span style=color:#a6e22e>include</span> = <span style=color:#e6db74>&#39;\.py&#39;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>[<span style=color:#a6e22e>tool</span>.<span style=color:#a6e22e>pytest</span>.<span style=color:#a6e22e>ini_options</span>]
+</span></span><span style=display:flex><span><span style=color:#a6e22e>minversion</span> = <span style=color:#e6db74>&#34;6.0&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>addopts</span> = <span style=color:#e6db74>&#34;--doctest-modules --doctest-continue-on-failure&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>[<span style=color:#a6e22e>tool</span>.<span style=color:#a6e22e>pylint</span>.<span style=color:#e6db74>&#39;FORMAT&#39;</span>]
+</span></span><span style=display:flex><span><span style=color:#a6e22e>max-line-length</span>=<span style=color:#ae81ff>180</span>
+</span></span></code></pre></div><h2 id=references>References</h2><ul><li>Many of my ideas came from this <a href=https://docs.python-guide.org/writing/structure/>Python-guide on project structure</a>.</li></ul><h2 id=footnotes>Footnotes</h2><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p><a href=https://docs.python.org/3/reference/import.html#packages>These are only 90% true, but that&rsquo;s good enough</a>.
+Package is an <a href=https://stackoverflow.com/a/54599368/4784655>overloaded term in Python</a>.&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></content><p><a href=https://dshemetov.github.io/blog/python/>#python</a></p></main><footer>Made with <a href=https://github.com/janraasch/hugo-bearblog/>Hugo ʕ•ᴥ•ʔ Bear</a></footer></body></html>

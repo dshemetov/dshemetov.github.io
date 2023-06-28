@@ -1,5 +1,2 @@
-User-agent: *
-# robotstxt.org - if environment is not `production` then robots will be disallowed.
-
-  Disallow:
-
+User-Agent: *
+Sitemap: https://dshemetov.github.io/sitemap.xml
