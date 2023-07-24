@@ -1,5 +1,7 @@
-body {
-    background-color: #1a2638;
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a2638;
+    }
 }
 
 a {
