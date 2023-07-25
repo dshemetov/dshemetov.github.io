@@ -8,6 +8,8 @@ tags: [
 ]
 ---
 
+Updated on: 2023-07-24.
+
 Python project structures are confusing. Let's make them less so.
 
 ## Terminology
@@ -15,49 +17,18 @@ Python project structures are confusing. Let's make them less so.
 First, a few standard Python terminology definitions:
 
 - a **module** is a single Python script,
-- a **package** is a collection of modules.[^1]
+- a **package** is a collection of modules[^1].
 
 A project may be an application or a library:
 
-- an **application** is a program that is meant to be deployed, such as a simple script, a server, or a Discord bot,
+- an **application** is a program that is meant to be deployed, such as a script for numerical calculations, a server, or a Discord bot,
 - a **library** is a package that will be imported by other libraries or applications.
 
 ## Project Structures
 
-There are a few recommended, [best-practice Python project structures](https://docs.python-guide.org/writing/structure/).
+There are a few common, recommended Python project structures[^2]. This is the one I prefer:
 
 ```sh
-# A "src-layout" Structure
-project_root/
-    docs/
-        conf.py
-        index.md
-    src/
-        package/
-            __init__.py
-            module.py
-    tests/
-        __init__.py
-        test_module.py
-    README.md
-    LICENSE
-    pyproject.toml
-
-# A Simpler "src-layout" with Tests In Package
-project_root/
-    docs/
-        conf.py
-        index.md
-    package/
-        __init__.py
-        module.py
-        tests/
-            __init__.py
-            test_module.py
-    README.md
-    LICENSE
-    pyproject.toml
-
 # A Simpler "src-layout" Structure
 project_root/
     docs/
@@ -65,54 +36,10 @@ project_root/
         index.md
     package/
         __init__.py
+        subpackageA/
+            __init__.py
+            moduleA.py
         module.py
-    tests/
-        __init__.py
-        test_module.py
-    README.md
-    LICENSE
-    pyproject.toml
-```
-
-My personal preference is option 3:
-
-- in option 1, the extra `src` folder has never been necessary to me,
-- in option 2, I don't think it's a good idea to include tests *inside your package folder*, because it introduces unnecessary bloat to users that aren't developers.
-
-## Python Imports
-
-Suppose that we go with option 3.
-
-### Imports in Tests
-
-How can we import functions from `module.py` into tests?
-The following is good enough.
-
-```py
-# test_module.py
-from package.module import module_func
-```
-
-If you use pytest, you can run `pytest .` in either in `project_root`, or in `project_root/tests` and the imports work just fine.
-This is because `pytest` can find the project root by first discovering tests in subfolders, traversing up the directory hierarchy until it finds a directory without tests, and appends that to Python path.
-See [here for more](https://docs.pytest.org/en/7.1.x/explanation/pythonpath.html#test-modules-conftest-py-files-inside-packages) and [here if you want to modify `pytest`'s Python path](https://stackoverflow.com/a/50610630/4784655).
-
-### Imports Between Subpackages
-
-Now suppose you have a subpackage `utils`.
-How can we import this into `package/module.py`?
-
-```sh
-project_root/
-    docs/
-        conf.py
-        index.md
-    package/
-        __init__.py
-        module.py
-    utils/
-        __init__.py
-        tool.py
     tests/
         __init__.py
         test_module.py
@@ -122,59 +49,67 @@ project_root/
     pyproject.toml
 ```
 
-The same answer as before works, but under a few conditions.
+It separates tests from the package code and removes the unnecessary `src` folder.
+
+- The `runner.py` script is the entry point for the application, such as a CLI (if you're building a library, you can omit this file).
+- The `package` folder is the package that will be imported by other libraries or applications.
+- The `tests` folder contains unit tests for the package.
+- The `docs` folder contains documentation for the package.
+
+The application is run with `python runner.py` from the top-level directory.
+
+## Imports
+
+Imports in each file can be handled as follows:
 
 ```py
-# module.py
-from utils.tool import util_func
+# absolute import in runner.py
+from package import module
+
+# absolute import in package/module.py
+from package.subpackageA import moduleA
+# relative import in package/module.py
+from .subpackageA import moduleA
+
+# absolute import in package/subpackageA/moduleA.py
+from package import module
+# relative import in package/subpackageA/moduleA.py
+from .. import module
+
+# absolute import in tests/test_module.py
+from package import module
+from package.subpackageA import moduleA
 ```
 
-The main condition is that the file that eventually runs your code needs to be in the top-level directory, e.g. `python runner.py`.
-What you *couldn't* do, is run this in `/project_root` dir
+Note that scripts can't import relative to each other, so you can't do `from . import module` in `runner.py` (this is because the `__name__` variable for `runner.py` is `__main__` when run as `python runner.py` and therefore Python can't do module name manipulation, see more [here](https://stackoverflow.com/questions/14132789/relative-imports-for-the-billionth-time)).
 
-```sh
-python package/module.py
+If you run `python runner.py` from the top-level directory, the `project_root` will be in your `PYTHONPATH` environment variable, so you can import `package` and its submodules from anywhere in the project.
+If you run `python package/module.py` from the top-level directory, you will get an error because `PYTHONPATH` will not contain `project_root`.
+You can test this by showing the Python path in `runner.py` and `package/module.py` (via the [`sys.path` variable](https://docs.python.org/3/library/sys.html?highlight=sys%20path#sys.path)):
+
+```py
+# runner.py
+import sys
+print(sys.path)
+
+# package/module.py
+import sys
+print(sys.path)
+
+# output of `python runner.py`:
+['/path/to/project_root', ...]
+
+# output of `python package/module.py`:
+['/path/to/project_root/package', ...]
 ```
 
-because its [`sys.path` variable](https://docs.python.org/3/library/sys.html?highlight=sys%20path#sys.path) would not contain the `utils` package and you will get an error.
-
-Instead you could use the `-m` flag to run as module
+Alternatively, you can run a package script from the top-level directory by using `-m` flag (see more on the [-m flag here](https://docs.python.org/3/using/cmdline.html#cmdoption-m)):
 
 ```sh
 python -m package.module
 ```
 
-(note the missing file extension and the directory slash replaced by a period).
-
-Another option is to modify `sys.path` in `package/module.py` like this:
-
-```py
-# module.py
-import sys
-import os
-
-sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir))
-
-from utils.tool import util_func
-```
-
-Personally, these do not spark joy.
-My solution so far has been:
-
-- for applications, the executable script is a top-level script outside the packages
-  - if you have submodules with code you want to execute, create a `runner.py` script that imports their code and executes it
-- for libraries, don't worry about it (hasn't ever been an issue).
-
-### But What About Relative Imports?
-
-This is not very deep, but:
-
-- relative imports won't fix the issues with directly executing submodules,
-- relative imports won't let you import something that you can't import with an absolute import (I'm pretty sure, but I'd like to find a Guido quote for this or something).
-
-So maybe just don't?
-
-See the top answer [to understand relative imports and their limitations](https://stackoverflow.com/questions/14132789/relative-imports-for-the-billionth-time).
+For testing, `pytest .` should work from any directory[^3].
 
 ## A Word On `pyproject.toml`
 
@@ -186,7 +121,7 @@ The Python community appears to have organized around using `pyproject.toml` to 
 
 See [PEP-518](https://peps.python.org/pep-0518/) and [PEP-621](https://peps.python.org/pep-0621/) for official specifications.
 
-This deprecates many configuration files, such as
+This unifies many configuration files, such as
 
 - `.pylintrc`
 - `setup.py`
@@ -219,8 +154,6 @@ classifiers = [
   "Programming Language :: Python"
 ]
 dependencies = [
-  "joblib",
-  "more-itertools",
   "numpy"
 ]
 
@@ -232,7 +165,6 @@ repository = ""
 py-modules = ["package_folder"]
 
 [tool.black]
-line-length = 180
 target-version = ['py310']
 include = '\.py'
 
@@ -241,14 +173,13 @@ minversion = "6.0"
 addopts = "--doctest-modules --doctest-continue-on-failure"
 
 [tool.pylint.'FORMAT']
-max-line-length=180
+max-line-length=100
 ```
-
-## References
-
-- Many of my ideas came from this [Python-guide on project structure](https://docs.python-guide.org/writing/structure/).
 
 ## Footnotes
 
-[^1]: [These are only 90% true, but that's good enough](https://docs.python.org/3/reference/import.html#packages).
+[^1]: [These definitions are 90% true](https://docs.python.org/3/reference/import.html#packages).
     Package is an [overloaded term in Python](https://stackoverflow.com/a/54599368/4784655).
+[^2]: This structure is recommended by the popular [Hitchhiker's Guide to Python](https://docs.python-guide.org/writing/structure/).
+    It is also default for [`poetry` projects](https://github.com/python-poetry/poetry), a common Python workflow tool.
+[^3]: `pytest` will find your project root by traversing up the directory hierarchy, see [more here](https://docs.pytest.org/en/7.1.x/explanation/pythonpath.html#test-modules-conftest-py-files-inside-packages)
