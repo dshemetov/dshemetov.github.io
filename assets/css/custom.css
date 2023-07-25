@@ -2,6 +2,11 @@
     body {
         background-color: #1a2638;
     }
+
+    code {
+        background-color: #222;
+        color: #eba613;
+    }
 }
 
 a {
