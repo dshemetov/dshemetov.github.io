@@ -29,7 +29,6 @@ A project may be an application or a library:
 There are a few common, recommended Python project structures[^2]. This is the one I prefer:
 
 ```sh
-# A Simpler "src-layout" Structure
 project_root/
     docs/
         conf.py
@@ -43,6 +42,7 @@ project_root/
     tests/
         __init__.py
         test_module.py
+    requirements.txt
     runner.py
     README.md
     LICENSE
@@ -111,70 +111,26 @@ python -m package.module
 
 For testing, `pytest .` should work from any directory[^3].
 
-## A Word On `pyproject.toml`
+## Managing Pythons, Dependencies, and Environments
 
-The Python community appears to have organized around using `pyproject.toml` to specify
+When it comes to Python management, I like to keep it simple.
+I [use `pyenv`](https://github.com/pyenv/pyenv) to manage Python versions and `python -m venv venv` to create virtual environments in my project.
+My standard `requirements.txt` file looks like this:
 
-- package metadata
-- build dependencies and environments
-- tool configurations
-
-See [PEP-518](https://peps.python.org/pep-0518/) and [PEP-621](https://peps.python.org/pep-0621/) for official specifications.
-
-This unifies many configuration files, such as
-
-- `.pylintrc`
-- `setup.py`
-- `setup.cfg`
-- `requirements.txt`
-
-Many other tools, such as `black` and `pytest` already support setting their configurations in `pyproject.toml` as well.
-
-For a little history and an introduction to the file, see [Brett Cannon's blog post](https://snarky.ca/what-the-heck-is-pyproject-toml/) (Brett is one of the authors of PEP-518 and related PEPs).
-
-Here is a sample `pyproject.toml` for a package that uses the `setuptools` backend.
-
-```toml
-[build-system]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
-
-[project]
-name = "package_name"
-version = "0.1.0"
-description = "Useful utilities"
-readme = "README.md"
-requires-python = ">=3.10"
-authors = [
-  {email = ""},
-  {name = ""}
-]
-classifiers = [
-  "Development Status :: 4 - Beta",
-  "Programming Language :: Python"
-]
-dependencies = [
-  "numpy"
-]
-
-[project.urls]
-repository = ""
-
-[tool.setuptools]
-# To specify specific folders or modules to install
-py-modules = ["package_folder"]
-
-[tool.black]
-target-version = ['py310']
-include = '\.py'
-
-[tool.pytest.ini_options]
-minversion = "6.0"
-addopts = "--doctest-modules --doctest-continue-on-failure"
-
-[tool.pylint.'FORMAT']
-max-line-length=100
+```txt
+black
+ruff
+pytest
+typer[all]
 ```
+
+- [`black` is a code formatter](https://black.readthedocs.io/en/stable/),
+- [`ruff` is a linter](https://beta.ruff.rs/docs/),
+- [`pytest` is a testing framework](https://docs.pytest.org/),
+- [`typer` is a CLI framework](https://typer.tiangolo.com/typer-cli/).
+
+The modern place to store tool configuration settings is `pyproject.toml`. [Here](https://gist.github.com/dshemetov/30001cf62798c3b749cbb26bd977946b) is a sample `pyproject.toml` I use for my projects.
+(See [here](https://snarky.ca/what-the-heck-is-pyproject-toml/) for an introductory blog post by Brett Cannon, one of the authors of [PEP-518](https://peps.python.org/pep-0518/) and [PEP-621](https://peps.python.org/pep-0621/).)
 
 ## Footnotes
 
