@@ -1,13 +1,12 @@
----
-title: "Fast Algorithms for $\\pi$ and Elliptic Integrals"
-date: 2023-03-05T14:04:04-08:00
-draft: false
-toc: true
-tags: [
++++
+title = "Fast Algorithms for $\\pi$ and Elliptic Integrals"
+date = "2023-03-05T14:04:04-08:00"
+toc = true
+tags = [
 	"math",
 	"number theory"
 ]
----
++++
 
 On this installment of Chill Math Friends, we learned a bit about a fast algorithm for $\pi$ and elliptic integrals.
 
@@ -17,10 +16,10 @@ Let's start by diving into the [Gauss-Legendre algorithm](https://en.wikipedia.o
 
 1. Start with $a_0=1, b_0=\frac 1 {\sqrt 2}$
 2. Repeat the following until desired accuracy \begin{align*}
-	a_{n+1} & = \frac{a_n + b_n} 2 \\\
-	b_{n+1} & = \sqrt{a_n b_n} \\\
-	t_{n+1} & = 1 - 2 \cdot \sum_{j=1}^n 2^j (a_j^2 - b_j^2)^2
-\end{align*}
+   a*{n+1} & = \frac{a_n + b_n} 2 \\\
+    b*{n+1} & = \sqrt{a*n b_n} \\\
+    t*{n+1} & = 1 - 2 \cdot \sum\_{j=1}^n 2^j (a_j^2 - b_j^2)^2
+   \end{align*}
 3. We then have an approximation $p_n$ of $\pi$ with $$p_n = \frac{(a_n + b_n)^2}{t_n}$$
 
 This approximation is quadratic, in the sense that $|\pi - p_{n+1}| < 0.075 \cdot |\pi - p_n|^2$, so in just 25 iterations, it gives 45 million correct digits of $\pi$.
@@ -37,12 +36,12 @@ Next, let us generalize the sequence above so that $a_0 = a$ and $b_n = b$. We s
 
 First, note that by the AM-GM inequality above, $b_n < a_n$ for all $n$. This implies $b_{n+1} = \sqrt{a_n \cdot b_n} > \sqrt{b_n \cdot b_n} = b_n$ and $a_{n+1} = \frac{a_n + b_n} 2 < \frac{a_n + a_n} 2 = a_n$. Both sequences are bounded $b = b_0 \leq b_n < a_n \leq a_0 = a$, so they are convergent. Finally, the difference between the sequences limits to zero
 \begin{align*}
-a_{n+1}^2 - b_{n+1}^2 & = \left( \frac {a_n + b_n} 2 \right)^2 - a_n b_n = \frac{a_n^2 + 2_anb_n +b_n^2 -4a_nb_n}4 \\\
+a*{n+1}^2 - b*{n+1}^2 & = \left( \frac {a_n + b_n} 2 \right)^2 - a_n b_n = \frac{a_n^2 + 2_anb_n +b_n^2 -4a_nb_n}4 \\\
 & = \frac{(a_n - b_n)^2} 4 = \frac{a_n - b_n}{4(a_n + b_n)} (a_n^2 - b_n^2) < \frac 1 4 (a_n^2 - b_n^2)
 \end{align*}
 which gives that $a_n^2 - b_n^2 = 4^{-n} (a^2 - b^2)$.
 
-Next comes an integral out of nowhere 
+Next comes an integral out of nowhere
 $$I(a, b) \coloneqq \int_0^{\pi /2 } \frac{d\theta} {\sqrt{a^2 \cos^2 \theta + b^2 \sin^2 \theta}}$$
 but it turns out that it is invariant on the whole AGM sequence, that is $I(a_n, b_n) = I(a_0, b_0)$ for all $n$. It turns out further that, setting $m \coloneqq \text{AGM}(a,b)$,
 

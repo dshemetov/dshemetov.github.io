@@ -1,12 +1,11 @@
----
-title: "Python Project Structures"
-date: 2022-09-02T17:29:37-07:00
-draft: false
-toc: true
-tags: [
++++
+title = "Python Project Structures"
+date = "2022-09-02T17:29:37-07:00"
+toc = true
+tags = [
     "python"
 ]
----
++++
 
 Updated on: 2023-07-24.
 
@@ -134,8 +133,12 @@ The modern place to store tool configuration settings is `pyproject.toml`. [Here
 
 ## Footnotes
 
-[^1]: [These definitions are 90% true](https://docs.python.org/3/reference/import.html#packages).
+[^1]:
+    [These definitions are 90% true](https://docs.python.org/3/reference/import.html#packages).
     Package is an [overloaded term in Python](https://stackoverflow.com/a/54599368/4784655).
-[^2]: This structure is recommended by the popular [Hitchhiker's Guide to Python](https://docs.python-guide.org/writing/structure/).
+
+[^2]:
+    This structure is recommended by the popular [Hitchhiker's Guide to Python](https://docs.python-guide.org/writing/structure/).
     It is also default for [`poetry` projects](https://github.com/python-poetry/poetry), a common Python workflow tool.
+
 [^3]: `pytest` will find your project root by traversing up the directory hierarchy, see [more here](https://docs.pytest.org/en/7.1.x/explanation/pythonpath.html#test-modules-conftest-py-files-inside-packages)

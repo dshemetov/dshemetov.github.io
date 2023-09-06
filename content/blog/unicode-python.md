@@ -1,12 +1,11 @@
----
-title: "Unicode, String Encodings, and Python"
-date: 2022-09-01T11:20:59-07:00
-draft: false
-toc: true
-tags: [
++++
+title = "Unicode, String Encodings, and Python"
+date = "2022-09-01T11:20:59-07:00"
+toc = true
+tags = [
     "python"
 ]
----
++++
 
 I've been working on the [cryptopals challenges](https://www.cryptopals.com/) and avoiding stock libraries, to learn more about string encodings and the `bytes` type in Python 3.
 So here, we'll learn way more than we need to know about Unicode.
@@ -60,7 +59,7 @@ assert "".join(bin(x) for x in b"10100\xe2\x99\x9e") == "0b1100010b1100000b11000
 Also note the variable length of each bit string.)
 
 UTF-8, used above, is one of the encodings of Unicode.[^utf-8]
-The [built-in `open()`](https://docs.python.org/3.10/library/functions.html#open) often uses the UTF-8 encoding by default, but generally this depends on your [locale](https://en.wikipedia.org/wiki/Locale_(computer_software)).
+The [built-in `open()`](https://docs.python.org/3.10/library/functions.html#open) often uses the UTF-8 encoding by default, but generally this depends on your [locale](<https://en.wikipedia.org/wiki/Locale_(computer_software)>).
 
 The built-in `open()` can also be used to read data in its pure binary form, by using `mode='b'`.
 This avoids passing the data through any decoding methods and allows for direct operation on the binary data.
@@ -94,7 +93,8 @@ The `bytes` type should not be confused with a string representation of an integ
 ## Footnotes
 
 [^python-2]: Python [changed its handling of Unicode in a big way](https://docs.python.org/3.0/whatsnew/3.0.html#text-vs-data-instead-of-unicode-vs-8-bit) when moving from 2 to 3.
-[^python-literal]: A Python literal is something that the parser interprets as syntax for writing an object directly.
+[^python-literal]:
+    A Python literal is something that the parser interprets as syntax for writing an object directly.
 
     ```py
     # Python Literals
@@ -110,14 +110,22 @@ The `bytes` type should not be confused with a string representation of an integ
     {1, 2}                              # set
     {1: 1, 2: 2}                        # dict
     ```
-[^python-literal-spec]: [Python's literal spec](https://docs.python.org/3.10/reference/lexical_analysis.html#literals) for more details.
+
+[^python-literal-spec]:
+    [Python's literal spec](https://docs.python.org/3.10/reference/lexical_analysis.html#literals) for more details.
     These specifications may also be useful: [f-string Syntax](https://docs.python.org/3/reference/lexical_analysis.html#f-strings) and [Format String Syntax](https://docs.python.org/3/library/string.html#formatstrings).
-[^unicode]: You can see the 1062 common English Unicode characters [here](https://en.wikipedia.org/wiki/List_of_Unicode_characters#Basic_Latin).
+
+[^unicode]:
+    You can see the 1062 common English Unicode characters [here](https://en.wikipedia.org/wiki/List_of_Unicode_characters#Basic_Latin).
     The full Unicode specification can be found [here](https://www.unicode.org/versions/Unicode14.0.0/#Summary).
     [See the wiki](https://en.wikipedia.org/wiki/Unicode) for some high level info.
-[^utf-8]: [Here is a worked example](https://en.wikipedia.org/wiki/UTF-8#Examples) of how to encode the 3-byte euro sign €.
+
+[^utf-8]:
+    [Here is a worked example](https://en.wikipedia.org/wiki/UTF-8#Examples) of how to encode the 3-byte euro sign €.
     While the string encodings (e.g. when using `str.encode`) can be any from [this list of standard encodings](https://docs.python.org/3.0/library/codecs.html#standard-encodings), UTF-8 is [the one you're most likely to encounter](https://w3techs.com/technologies/cross/character_encoding/ranking).
-[^string-representations]: String representations of integers are just Python strings that represent integers using standard numerical systems.
+
+[^string-representations]:
+    String representations of integers are just Python strings that represent integers using standard numerical systems.
     Here are few examples:
 
     ```py

@@ -1,7 +1,6 @@
----
-title: "Information Theory and Statistics Reading Group"
-date: 2019-08-25
----
++++
+date = "2019-08-25"
++++
 
 # Information Theory and Statistics Reading Group
 
@@ -33,8 +32,8 @@ This group met from Fall 2018 to Winter 2019.
 ## References
 
 [^1]: A. Singh, [“Data Processing and Information Theory Course Notes”](https://www.cs.cmu.edu/~aarti/Class/10704_Fall16/lecs.html)
-[^2]: L. Faivishevsky, J. Goldberger, [“A Nonparametric Information Theoretic Clustering Algorithm”](https://www.cs.cmu.edu/~aarti/Class/10704_Fall16/faivishevsky.pdf) 
-[^3]: A. Krause, A. Singh, C. Guestrin, [“Near-Optimal Sensor Placements in Gaussian Processes: Theory, Efficient Algorithms and Empirical Studies”](http://www.jmlr.org/papers/volume9/krause08a/krause08a.pdf) 
+[^2]: L. Faivishevsky, J. Goldberger, [“A Nonparametric Information Theoretic Clustering Algorithm”](https://www.cs.cmu.edu/~aarti/Class/10704_Fall16/faivishevsky.pdf)
+[^3]: A. Krause, A. Singh, C. Guestrin, [“Near-Optimal Sensor Placements in Gaussian Processes: Theory, Efficient Algorithms and Empirical Studies”](http://www.jmlr.org/papers/volume9/krause08a/krause08a.pdf)
 [^4]: A. Kraskov, H. Stoegbauer, P. Grassberger, [“Estimating Mutual Information”](https://arxiv.org/abs/cond-mat/0305641)
 [^5]: J. Walters-Williams, Y. Li, [“Estimating Mutual Information: A Survey”](https://link.springer.com/chapter/10.1007/978-3-642-02962-2_49)
 [^6]: T. Cover, J. Thomas, _Elements of Information Theory_ [↩](https://dshemetov.github.io/itsrg#fnref:1)
