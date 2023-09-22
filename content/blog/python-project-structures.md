@@ -48,8 +48,6 @@ project_root/
     pyproject.toml
 ```
 
-It separates tests from the package code and removes the unnecessary `src` folder.
-
 - The `runner.py` script is the entry point for the application, such as a CLI (if you're building a library, you can omit this file).
 - The `package` folder is the package that will be imported by other libraries or applications.
 - The `tests` folder contains unit tests for the package.

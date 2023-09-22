@@ -14,7 +14,7 @@ Here are some notes.
 ## Why is the multinomial coefficient always an integer?
 
 From the combinatorial perspective, the answer is short and obvious.
-But, dear reader, us here at Slow Math Friends, are not into the short or obvious.
+But, dear reader, we here at Slow Math Friends, are into the long and arduous.
 We're going to give an argument based on [Legendre's formula](https://en.wikipedia.org/wiki/Legendre%27s_formula).
 
 **Theorem 1**: Legendre's formula gives the highest power of a prime $p$ dividing $n!$ by
@@ -48,9 +48,9 @@ $$\sum_{p \leq n \text{ prime}} \frac 1 p > \log \log (n+1) - \log \frac {\pi^2}
 
 _Proof_: the outline of the proof is as follows
 \begin{align}
-\log(n+1) & < \sum*{i=1}^n \frac 1 i \\\
-& \leq \prod*{p \leq n \text{ prime}} \left( 1 + \frac 1 p \right) \sum*{k=1}^n \frac 1 {k^2} \\\
-& < \frac {\pi^2} 6 \prod*{p \leq n \text{ prime}} \exp \left( \frac 1 p \right) \\\
+\log(n+1) & < \sum_{i=1}^n \frac 1 i \\\
+& \leq \prod_{p \leq n \text{ prime}} \left( 1 + \frac 1 p \right) \sum_{k=1}^n \frac 1 {k^2} \\\
+& < \frac {\pi^2} 6 \prod_{p \leq n \text{ prime}} \exp \left( \frac 1 p \right) \\\
 % & = \frac {\pi^2} 6 \exp \left( \sum\_{p \leq n \text{ prime}} \frac 1 p \right). \\\
 \end{align}
 
@@ -87,13 +87,13 @@ You can see that each hexagonal number is the outer shell of a cube visually.
 For a sequence $a_n$ defined by $a_n = f(n)$, we have the immediate relation that $f^{-1}(a_n) = n$.
 For monotonically increasing integer sequences $a_n$, we can use this to get a count of sequence elements that are less than or equal to $n$.
 We define the density of a sequence $a_n$ by
-$$D(a_n, N) \coloneqq \frac{f^{-1}(a_n)} N$$
+$$D(a_n) \coloneqq \frac{f^{-1}(a_n)} n$$
 Here are a few examples
-$$D(r^n, N) = \frac {\log_r N} N$$
-$$D(n^r, N) = N^{\frac 1 r -1}$$
-$$D(a + b n, N) = \frac{(N - a)} {b N}$$
-$$D(p_n, N) = \frac {\pi(N)}N \sim \frac 1 {\log N}$$
-where $p_n$ is the $n$th prime and $\pi(N)$ is the number of primes less than $N$.
+$$D(r^n) = \frac {\log_r n} n$$
+$$D(n^r) = n^{\frac 1 r -1}$$
+$$D(a + b n) = \frac{(n - a)} {b n}$$
+$$D(p_n) = \frac {\pi(n)}n \sim \frac 1 {\log n}$$
+where $p_n$ is the $n$th prime and $\pi(n)$ is the number of primes less than $N$.
 Which demonstrates that the density of primes is just a little less than arithmetic and a bit more than geometric progression[^sequence-growth-rates].
 
 ## Future directions
