@@ -1,5 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>asymptotics on ┐｜･ิω･ิ#｜┌ Dmitry's Online Webpage</title><link>https://dshemetov.github.io/blog/asymptotics/</link><description>Recent content in asymptotics on ┐｜･ิω･ิ#｜┌ Dmitry's Online Webpage</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Copyright © 2023</copyright><lastBuildDate>Wed, 31 Aug 2022 09:58:27 -0700</lastBuildDate><atom:link href="https://dshemetov.github.io/blog/asymptotics/index.xml" rel="self" type="application/rss+xml"/><item><title>Euler-Maclaurin Formula</title><link>https://dshemetov.github.io/euler-maclaurin-formula/</link><pubDate>Wed, 31 Aug 2022 09:58:27 -0700</pubDate><guid>https://dshemetov.github.io/euler-maclaurin-formula/</guid><description>In the math test post, we briefly discussed how to arrive at Stirling&amp;rsquo;s approximation. Here, we go deeper.
-Asymptotic Behavior of the Harmonic Series Let&amp;rsquo;s begin by understanding the asymptotic behavior of the harmonic series. The harmonic series $H_n = \sum_{i=1}^n \frac 1 i$ can be estimated with an integral
-$$ \sum_{i=1}^n \frac 1 i \approx \int_1^n \frac 1 x dx = \ln n, $$
-with
-$$ \lim_{n \to \infty} (H_n - \ln n) = \gamma, $$</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Asymptotics on ┐｜･ิω･ิ#｜┌ Dmitry's Online Webpage</title><link>https://dshemetov.github.io/blog/asymptotics/</link><description>Recent content in Asymptotics on ┐｜･ิω･ิ#｜┌ Dmitry's Online Webpage</description><generator>Hugo</generator><language>en-us</language><copyright>Copyright © 2023</copyright><lastBuildDate>Wed, 31 Aug 2022 09:58:27 -0700</lastBuildDate><atom:link href="https://dshemetov.github.io/blog/asymptotics/index.xml" rel="self" type="application/rss+xml"/><item><title>Euler-Maclaurin Formula</title><link>https://dshemetov.github.io/euler-maclaurin-formula/</link><pubDate>Wed, 31 Aug 2022 09:58:27 -0700</pubDate><guid>https://dshemetov.github.io/euler-maclaurin-formula/</guid><description>&lt;p&gt;In the &lt;a href="https://dshemetov.github.io/blog/binomial-poisson"&gt;math test post&lt;/a&gt;, we briefly discussed how to arrive at Stirling&amp;rsquo;s approximation.
+Here, we go deeper.&lt;/p&gt;
+&lt;h2 id="asymptotic-behavior-of-the-harmonic-series"&gt;Asymptotic Behavior of the Harmonic Series&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s begin by understanding the asymptotic behavior of the harmonic series.
+The harmonic series $H_n = \sum_{i=1}^n \frac 1 i$ can be estimated with an integral&lt;/p&gt;
+$$
+ \sum_{i=1}^n \frac 1 i \approx \int_1^n \frac 1 x dx = \ln n,
+$$&lt;p&gt;with&lt;/p&gt;
+$$
+ \lim_{n \to \infty} (H_n - \ln n) = \gamma,
+$$&lt;p&gt;where $\gamma$ ~ 0.57&amp;hellip; is the &lt;a href="https://en.wikipedia.org/wiki/Euler%27s_constant"&gt;Euler-Mascherroni constant&lt;/a&gt;.&lt;/p&gt;</description></item></channel></rss>

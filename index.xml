@@ -1,26 +1,141 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>┐｜･ิω･ิ#｜┌ Dmitry's Online Webpage</title><link>https://dshemetov.github.io/</link><description>Recent content on ┐｜･ิω･ิ#｜┌ Dmitry's Online Webpage</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Copyright © 2023</copyright><lastBuildDate>Sun, 13 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://dshemetov.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Coding Puzzles</title><link>https://dshemetov.github.io/coding-puzzles/</link><pubDate>Sun, 13 Aug 2023 00:00:00 +0000</pubDate><guid>https://dshemetov.github.io/coding-puzzles/</guid><description>Soon to be extremely deprecated in the age of LLMs, here are some of my solutions anyway:
-LeetCode Advent of Code</description></item><item><title>Sketches EP</title><link>https://dshemetov.github.io/sketches-ep/</link><pubDate>Mon, 17 Apr 2023 22:50:55 -0700</pubDate><guid>https://dshemetov.github.io/sketches-ep/</guid><description>I made an album of improvised acoustic guitar songs this February. It&amp;rsquo;s here on Bandcamp.
-I am quite proud of it. Not so much of the guitar playing or the composition, but of the fact that I actually put something out. I&amp;rsquo;ve been playing guitar for almost 20 years and finishing and publishing projects has been my biggest challenge1.
-So here&amp;rsquo;s to overcoming long-held hurdles.
-My two main projects were a cover of Sikth &amp;ldquo;Bland Street Bloom&amp;rdquo; in 2011 and a metal radio show called HEAVY from 2015-2016, which I co-hosted with my friend George Mossessian.</description></item><item><title>Fast Python</title><link>https://dshemetov.github.io/fast-python/</link><pubDate>Sat, 15 Apr 2023 17:50:38 -0800</pubDate><guid>https://dshemetov.github.io/fast-python/</guid><description>I recently got to work on making fast Python code. I put together an IPython notebook highlighting some things I learned. Topics include NumPy, Cython, and Numba.</description></item><item><title>Fast Algorithms for $\pi$ and Elliptic Integrals</title><link>https://dshemetov.github.io/fast-algorithms-for-%5Cpi-and-elliptic-integrals/</link><pubDate>Sun, 05 Mar 2023 14:04:04 -0800</pubDate><guid>https://dshemetov.github.io/fast-algorithms-for-%5Cpi-and-elliptic-integrals/</guid><description>On this installment of Chill Math Friends, we learned a bit about a fast algorithm for $\pi$ and elliptic integrals.
-Gauss-Legendre Algorithm Let&amp;rsquo;s start by diving into the Gauss-Legendre algorithm. The algorithm is:
-Start with $a_0=1, b_0=\frac 1 {\sqrt 2}$ Repeat the following until desired accuracy \begin{align*} a_{n+1} &amp;amp; = \frac{a_n + b_n} 2 \\ b_{n+1} &amp;amp; = \sqrt{a_n b_n} \\ t_{n+1} &amp;amp; = 1 - 2 \cdot \sum_{j=1}^n 2^j (a_j^2 - b_j^2)^2 \end{align*} We then have an approximation $p_n$ of $\pi$ with $$p_n = \frac{(a_n + b_n)^2}{t_n}$$ This approximation is quadratic, in the sense that $|\pi - p_{n+1}| &amp;lt; 0.</description></item><item><title>A Diversion Into Number Theory</title><link>https://dshemetov.github.io/a-diversion-into-number-theory/</link><pubDate>Sat, 18 Feb 2023 12:12:48 -0800</pubDate><guid>https://dshemetov.github.io/a-diversion-into-number-theory/</guid><description>My good friend Jordan and I are doing some recreational math together. Here are some notes.
-Why is the multinomial coefficient always an integer? From the combinatorial perspective, the answer is short and obvious. But, dear reader, we here at Slow Math Friends, are into the long and arduous. We&amp;rsquo;re going to give an argument based on Legendre&amp;rsquo;s formula.
-Theorem 1: Legendre&amp;rsquo;s formula gives the highest power of a prime $p$ dividing $n!</description></item><item><title>Python Project Structures</title><link>https://dshemetov.github.io/python-project-structures/</link><pubDate>Fri, 02 Sep 2022 17:29:37 -0700</pubDate><guid>https://dshemetov.github.io/python-project-structures/</guid><description>Updated on: 2023-07-24.
-Python project structures are confusing. Let&amp;rsquo;s make them less so.
-Terminology First, a few standard Python terminology definitions:
-a module is a single Python script, a package is a collection of modules1. A project may be an application or a library:
-an application is a program that is meant to be deployed, such as a script for numerical calculations, a server, or a Discord bot, a library is a package that will be imported by other libraries or applications.</description></item><item><title>Unicode, String Encodings, and Python</title><link>https://dshemetov.github.io/unicode-string-encodings-and-python/</link><pubDate>Thu, 01 Sep 2022 11:20:59 -0700</pubDate><guid>https://dshemetov.github.io/unicode-string-encodings-and-python/</guid><description>I&amp;rsquo;ve been working on the cryptopals challenges and avoiding stock libraries, to learn more about string encodings and the bytes type in Python 3. So here, we&amp;rsquo;ll learn way more than we need to know about Unicode.
-Text as Unicode Strings To work with text data, computers need to work with many different types of characters. From all the world&amp;rsquo;s languages to symbols to emojis, the list goes on. Unicode1 is a specification that aims to give every character used in human texts its own unique and standard code.</description></item><item><title>Euler-Maclaurin Formula</title><link>https://dshemetov.github.io/euler-maclaurin-formula/</link><pubDate>Wed, 31 Aug 2022 09:58:27 -0700</pubDate><guid>https://dshemetov.github.io/euler-maclaurin-formula/</guid><description>In the math test post, we briefly discussed how to arrive at Stirling&amp;rsquo;s approximation. Here, we go deeper.
-Asymptotic Behavior of the Harmonic Series Let&amp;rsquo;s begin by understanding the asymptotic behavior of the harmonic series. The harmonic series $H_n = \sum_{i=1}^n \frac 1 i$ can be estimated with an integral
-$$ \sum_{i=1}^n \frac 1 i \approx \int_1^n \frac 1 x dx = \ln n, $$
-with
-$$ \lim_{n \to \infty} (H_n - \ln n) = \gamma, $$</description></item><item><title>Math Blogging</title><link>https://dshemetov.github.io/math-blogging/</link><pubDate>Thu, 07 Nov 2019 00:00:00 +0000</pubDate><guid>https://dshemetov.github.io/math-blogging/</guid><description>A few cute derivations to test math blogging with Hugo.
-Binomial Limit to Poisson A basic fact about Binomial distributions is that they can be approximated by the Poisson distribution in a certain limit. As is often the case in probability, you can show this with generating functions. Here, however, we will show the pointwise limit of distributions.
-First, let us recall a few definitions. The Binomial variable $\text{Bi}(n, \frac \lambda n)$ has the probability mass function (pmf)</description></item><item><title/><link>https://dshemetov.github.io/information-theory-reading-group/</link><pubDate>Sun, 25 Aug 2019 00:00:00 +0000</pubDate><guid>https://dshemetov.github.io/information-theory-reading-group/</guid><description>Information Theory and Statistics Reading Group This group met from Fall 2018 to Winter 2019.
-Winter Quarter [03/05/2019] Tong Yitang presents on Lecture 71. Topics include maximum entropy density estimation, information projection, and the duality of maximum entropy with maximum likelihood estimation. [02/26/2019] David Weber presents on Lecture 61. Topics include graphical models. [02/19/2019] David Weber and Dmitry Shemetov present on Lecture 61. Topics include mutual information estimators and applications of mutual information to machine learning.</description></item><item><title/><link>https://dshemetov.github.io/academic/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dshemetov.github.io/academic/</guid><description>Academic History I earned a PhD in Applied Mathematics from University of California, Davis in 2021, advised by James Sharpnack. My Google Scholar has my publications.
-My PhD work studied statistical problems on graphs. Specifically, I was interested in
-information theory and statistics with memory constraints, networks and graph algorithms, combinatorics, probability, and Markov Chains. Timeline Mar, 2021 Finished my dissertation titled &amp;ldquo;Concerning Some Statistical Problems on Graphs&amp;rdquo; and received my doctorate.</description></item><item><title/><link>https://dshemetov.github.io/now/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dshemetov.github.io/now/</guid><description>Now Updated: 2023-08-13 (this is a now page).
-Learning about:
-Forecasting and time series analysis with Forecasting: Principles and Practice. Advanced R concepts with Advanced R. Currently reading:
-A Swim In A Pond In The Rain by George Saunders. Stories of Your Life and Others by Ted Chiang. Fooled by Randomness by Nassim Taleb.</description></item><item><title/><link>https://dshemetov.github.io/projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dshemetov.github.io/projects/</guid><description>Projects Current 2020-present I work as a statistical developer at Delphi, a public health research group at Carnegie Mellon University. Past 2013-2021 I was really into studying math.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>┐｜･ิω･ิ#｜┌ Dmitry's Online Webpage</title><link>https://dshemetov.github.io/</link><description>Recent content on ┐｜･ิω･ิ#｜┌ Dmitry's Online Webpage</description><generator>Hugo</generator><language>en-us</language><copyright>Copyright © 2023</copyright><lastBuildDate>Sun, 13 Aug 2023 22:51:13 -0700</lastBuildDate><atom:link href="https://dshemetov.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Books 2023</title><link>https://dshemetov.github.io/books-2023/</link><pubDate>Sun, 13 Aug 2023 22:51:13 -0700</pubDate><guid>https://dshemetov.github.io/books-2023/</guid><description>&lt;p&gt;Here are a few books I read this year:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.nytimes.com/2021/01/12/books/review-swim-pond-rain-george-saunders.html"&gt;&lt;em&gt;A Swim In A Pond In The Rain&lt;/em&gt;&lt;/a&gt; by George Saunders.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.goodreads.com/book/show/223380.Stories_of_Your_Life_and_Others"&gt;&lt;em&gt;Stories of Your Life and Others&lt;/em&gt;&lt;/a&gt; by Ted Chiang.&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Coding Puzzles</title><link>https://dshemetov.github.io/coding-puzzles/</link><pubDate>Sun, 13 Aug 2023 00:00:00 +0000</pubDate><guid>https://dshemetov.github.io/coding-puzzles/</guid><description>&lt;p&gt;Soon to be extremely deprecated in the age of LLMs, here are some of my solutions anyway:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/dshemetov/leetcode"&gt;LeetCode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/dshemetov/advent-of-code-solutions"&gt;Advent of Code&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Sketches EP</title><link>https://dshemetov.github.io/sketches-ep/</link><pubDate>Mon, 17 Apr 2023 22:50:55 -0700</pubDate><guid>https://dshemetov.github.io/sketches-ep/</guid><description>&lt;p&gt;I made an album of improvised acoustic guitar songs this February.
+It&amp;rsquo;s here on &lt;a href="https://flyingskeletonhand.bandcamp.com/album/sketches"&gt;Bandcamp&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I am quite proud of it.
+Not so much of the guitar playing or the composition, but of the fact that I actually put something out.
+I&amp;rsquo;ve been playing guitar for almost 20 years and finishing and publishing projects has been my biggest challenge&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;So here&amp;rsquo;s to overcoming long-held hurdles.&lt;/p&gt;
+&lt;div class="footnotes" role="doc-endnotes"&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;My two main projects were a cover of &lt;a href="https://youtu.be/jtcjUgCWa8U"&gt;Sikth &amp;ldquo;Bland Street Bloom&amp;rdquo;&lt;/a&gt; in 2011 and a metal radio show called &lt;a href="https://kdrt.org/program/heavy"&gt;HEAVY&lt;/a&gt; from 2015-2016, which I co-hosted with my friend George Mossessian.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Fast Python</title><link>https://dshemetov.github.io/fast-python/</link><pubDate>Sat, 15 Apr 2023 17:50:38 -0800</pubDate><guid>https://dshemetov.github.io/fast-python/</guid><description>&lt;p&gt;I recently got to work on making fast Python code. I put together &lt;a href="https://gist.github.com/dshemetov/43c6c988e3c9237f15930fc6190b6d77"&gt;an IPython notebook&lt;/a&gt; highlighting some things I learned. Topics include NumPy, Cython, and Numba.&lt;/p&gt;</description></item><item><title>Fast Algorithms for $\pi$ and Elliptic Integrals</title><link>https://dshemetov.github.io/fast-algorithms-for-%5Cpi-and-elliptic-integrals/</link><pubDate>Sun, 05 Mar 2023 14:04:04 -0800</pubDate><guid>https://dshemetov.github.io/fast-algorithms-for-%5Cpi-and-elliptic-integrals/</guid><description>&lt;p&gt;On this installment of Chill Math Friends, we learned a bit about a fast algorithm for $\pi$ and elliptic integrals.&lt;/p&gt;
+&lt;h2 id="gauss-legendre-algorithm"&gt;Gauss-Legendre Algorithm&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s start by diving into the &lt;a href="https://en.wikipedia.org/wiki/Gauss%E2%80%93Legendre_algorithm"&gt;Gauss-Legendre algorithm&lt;/a&gt;. The algorithm is:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Start with $a_0=1, b_0=\frac 1 {\sqrt 2}$&lt;/li&gt;
+&lt;li&gt;Repeat the following until desired accuracy \begin{align*}
+a_{n+1} &amp;amp; = \frac{a_n + b_n} 2 \\
+b_{n+1} &amp;amp; = \sqrt{a_n b_n} \\
+t_{n+1} &amp;amp; = 1 - 2 \cdot \sum_{j=1}^n 2^j (a_j^2 - b_j^2)^2
+\end{align*}&lt;/li&gt;
+&lt;li&gt;We then have an approximation $p_n$ of $\pi$ with $$p_n = \frac{(a_n + b_n)^2}{t_n}$$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This approximation is quadratic, in the sense that $|\pi - p_{n+1}| &amp;lt; 0.075 \cdot |\pi - p_n|^2$, so in just 25 iterations, it gives 45 million correct digits of $\pi$.&lt;/p&gt;</description></item><item><title>A Diversion Into Number Theory</title><link>https://dshemetov.github.io/a-diversion-into-number-theory/</link><pubDate>Sat, 18 Feb 2023 12:12:48 -0800</pubDate><guid>https://dshemetov.github.io/a-diversion-into-number-theory/</guid><description>&lt;p&gt;My good friend &lt;a href="https://jasnyder.github.io/"&gt;Jordan&lt;/a&gt; and I are doing some recreational math together.
+Here are some notes.&lt;/p&gt;
+&lt;h2 id="why-is-the-multinomial-coefficient-always-an-integer"&gt;Why is the multinomial coefficient always an integer?&lt;/h2&gt;
+&lt;p&gt;From the combinatorial perspective, the answer is short and obvious.
+But, dear reader, we here at Slow Math Friends, are into the long and arduous.
+We&amp;rsquo;re going to give an argument based on &lt;a href="https://en.wikipedia.org/wiki/Legendre%27s_formula"&gt;Legendre&amp;rsquo;s formula&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Theorem 1&lt;/strong&gt;: Legendre&amp;rsquo;s formula gives the highest power of a prime $p$ dividing $n!$ by
+&lt;/p&gt;</description></item><item><title>Python Project Structures</title><link>https://dshemetov.github.io/python-project-structures/</link><pubDate>Fri, 02 Sep 2022 17:29:37 -0700</pubDate><guid>https://dshemetov.github.io/python-project-structures/</guid><description>&lt;p&gt;Updated on: 2023-07-24.&lt;/p&gt;
+&lt;p&gt;Python project structures are confusing. Let&amp;rsquo;s make them less so.&lt;/p&gt;
+&lt;h2 id="terminology"&gt;Terminology&lt;/h2&gt;
+&lt;p&gt;First, a few standard Python terminology definitions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a &lt;strong&gt;module&lt;/strong&gt; is a single Python script,&lt;/li&gt;
+&lt;li&gt;a &lt;strong&gt;package&lt;/strong&gt; is a collection of modules&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A project may be an application or a library:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;an &lt;strong&gt;application&lt;/strong&gt; is a program that is meant to be deployed, such as a script for numerical calculations, a server, or a Discord bot,&lt;/li&gt;
+&lt;li&gt;a &lt;strong&gt;library&lt;/strong&gt; is a package that will be imported by other libraries or applications.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="project-structures"&gt;Project Structures&lt;/h2&gt;
+&lt;p&gt;There are a few common, recommended Python project structures&lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref"&gt;2&lt;/a&gt;&lt;/sup&gt;. This is the one I prefer:&lt;/p&gt;</description></item><item><title>Unicode, String Encodings, and Python</title><link>https://dshemetov.github.io/unicode-string-encodings-and-python/</link><pubDate>Thu, 01 Sep 2022 11:20:59 -0700</pubDate><guid>https://dshemetov.github.io/unicode-string-encodings-and-python/</guid><description>&lt;p&gt;I&amp;rsquo;ve been working on the &lt;a href="https://www.cryptopals.com/"&gt;cryptopals challenges&lt;/a&gt; and avoiding stock libraries, to learn more about string encodings and the &lt;code&gt;bytes&lt;/code&gt; type in Python 3.
+So here, we&amp;rsquo;ll learn way more than we need to know about Unicode.&lt;/p&gt;
+&lt;h2 id="text-as-unicode-strings"&gt;Text as Unicode Strings&lt;/h2&gt;
+&lt;p&gt;To work with &lt;strong&gt;text data&lt;/strong&gt;, computers need to work with many different types of characters.
+From all the world&amp;rsquo;s languages to symbols to emojis, the list goes on.
+Unicode&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt; is a specification that aims to give every character used in human texts its own unique and standard code.&lt;/p&gt;</description></item><item><title>Euler-Maclaurin Formula</title><link>https://dshemetov.github.io/euler-maclaurin-formula/</link><pubDate>Wed, 31 Aug 2022 09:58:27 -0700</pubDate><guid>https://dshemetov.github.io/euler-maclaurin-formula/</guid><description>&lt;p&gt;In the &lt;a href="https://dshemetov.github.io/blog/binomial-poisson"&gt;math test post&lt;/a&gt;, we briefly discussed how to arrive at Stirling&amp;rsquo;s approximation.
+Here, we go deeper.&lt;/p&gt;
+&lt;h2 id="asymptotic-behavior-of-the-harmonic-series"&gt;Asymptotic Behavior of the Harmonic Series&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s begin by understanding the asymptotic behavior of the harmonic series.
+The harmonic series $H_n = \sum_{i=1}^n \frac 1 i$ can be estimated with an integral&lt;/p&gt;
+$$
+ \sum_{i=1}^n \frac 1 i \approx \int_1^n \frac 1 x dx = \ln n,
+$$&lt;p&gt;with&lt;/p&gt;
+$$
+ \lim_{n \to \infty} (H_n - \ln n) = \gamma,
+$$&lt;p&gt;where $\gamma$ ~ 0.57&amp;hellip; is the &lt;a href="https://en.wikipedia.org/wiki/Euler%27s_constant"&gt;Euler-Mascherroni constant&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>A Few Facts About Fibonacci Numbers</title><link>https://dshemetov.github.io/a-few-facts-about-fibonacci-numbers/</link><pubDate>Thu, 05 Dec 2019 14:04:04 -0800</pubDate><guid>https://dshemetov.github.io/a-few-facts-about-fibonacci-numbers/</guid><description>&lt;p&gt;More &lt;a href="https://dshemetov.github.io/blog/math-blogging"&gt;math blog testing&lt;/a&gt;. From a number theory course I graded a few years ago.&lt;/p&gt;
+&lt;h2 id="fibonacci-numbers"&gt;Fibonacci Numbers&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Definition 1.&lt;/strong&gt; The Fibonacci numbers are defined by $f_0 = 0, f_1 = 1$ and the recursive relation
+&lt;/p&gt;
+$$f_n \coloneqq f_{n-1} + f_{n-2}, \ \ n \geq 1.$$&lt;p&gt;&lt;strong&gt;Definition 2.&lt;/strong&gt; A divisor of an integer $m$ is an integer $d$ such that $\exists b \in \Z$ with $b d = m$. The set of all divisors of $m$ is denoted by $D_m \coloneqq \{ b | bk = m,\ k, b \in \Z \}$.&lt;/p&gt;</description></item><item><title>Math Blogging</title><link>https://dshemetov.github.io/math-blogging/</link><pubDate>Thu, 07 Nov 2019 00:00:00 +0000</pubDate><guid>https://dshemetov.github.io/math-blogging/</guid><description>&lt;p&gt;A few cute derivations to test math blogging with &lt;a href="https://gohugo.io"&gt;Hugo&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="binomial-limit-to-poisson"&gt;Binomial Limit to Poisson&lt;/h2&gt;
+&lt;p&gt;A basic fact about Binomial distributions is that they can be approximated by the Poisson distribution in a certain limit.
+As is often the case in probability, you can show this with generating functions.
+Here, however, we will show the pointwise limit of distributions.&lt;/p&gt;
+&lt;p&gt;First, let us recall a few definitions.
+The Binomial variable $\text{Bi}(n, \frac \lambda n)$ has the probability mass function (pmf)&lt;/p&gt;</description></item><item><title/><link>https://dshemetov.github.io/information-theory-reading-group/</link><pubDate>Sun, 25 Aug 2019 00:00:00 +0000</pubDate><guid>https://dshemetov.github.io/information-theory-reading-group/</guid><description>&lt;h1 id="information-theory-and-statistics-reading-group"&gt;Information Theory and Statistics Reading Group&lt;/h1&gt;
+&lt;p&gt;This group met from Fall 2018 to Winter 2019.&lt;/p&gt;
+&lt;h2 id="winter-quarter"&gt;Winter Quarter&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[03/05/2019] Tong Yitang presents on Lecture 7&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;. Topics include maximum entropy density estimation, information projection, and the duality of maximum entropy with maximum likelihood estimation.&lt;/li&gt;
+&lt;li&gt;[02/26/2019] David Weber presents on Lecture 6&lt;sup id="fnref1:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;. Topics include graphical models.&lt;/li&gt;
+&lt;li&gt;[02/19/2019] David Weber and Dmitry Shemetov present on Lecture 6&lt;sup id="fnref2:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;. Topics include mutual information estimators and applications of mutual information to machine learning.&lt;/li&gt;
+&lt;li&gt;[02/12/2019] Dmitry Shemetov presents on Lecture 4 and 5&lt;sup id="fnref3:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;. Topics include properties of submodular functions, maximizing submodular funcions, and an information theoretic clustering algorithm&lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref"&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+&lt;li&gt;[01/29/2019] Dmitry Shemetov presents on Lecture 3&lt;sup id="fnref4:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;. Topics include the data processing inequality, submodular functions, submodularity of mutual information, maximizing submodular functions, and an application of sensor placement&lt;sup id="fnref:3"&gt;&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref"&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+&lt;li&gt;[01/22/2019] David Weber presents on the challenges of estimating mutual information&lt;sup id="fnref:4"&gt;&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref"&gt;4&lt;/a&gt;&lt;/sup&gt; &lt;sup id="fnref:5"&gt;&lt;a href="#fn:5" class="footnote-ref" role="doc-noteref"&gt;5&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+&lt;li&gt;[01/15/2019] Cong Xu presents on “Chapter 5: Data Compression”&lt;sup id="fnref:6"&gt;&lt;a href="#fn:6" class="footnote-ref" role="doc-noteref"&gt;6&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="fall-quarter"&gt;Fall Quarter&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[12/13/2018] Dmitry Shemetov presents an introduction to some work by Katalin Marton&lt;sup id="fnref:7"&gt;&lt;a href="#fn:7" class="footnote-ref" role="doc-noteref"&gt;7&lt;/a&gt;&lt;/sup&gt;: the blowing up lemma&lt;sup id="fnref:8"&gt;&lt;a href="#fn:8" class="footnote-ref" role="doc-noteref"&gt;8&lt;/a&gt;&lt;/sup&gt;, single-letter characterization, Ornstein’s copying lemma, and Talagrand’s theorem.&lt;/li&gt;
+&lt;li&gt;[12/07/2018] David Weber lays the foundations with “Chapter 8: Differential Entropy”&lt;sup id="fnref1:6"&gt;&lt;a href="#fn:6" class="footnote-ref" role="doc-noteref"&gt;6&lt;/a&gt;&lt;/sup&gt; and then presents on “Estimating Mutual Information”&lt;sup id="fnref1:4"&gt;&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref"&gt;4&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+&lt;li&gt;[11/29/2018] Yiqun Shao presents&lt;sup id="fnref:9"&gt;&lt;a href="#fn:9" class="footnote-ref" role="doc-noteref"&gt;9&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+&lt;li&gt;[11/09/2018] Stephen Sheng presents&lt;sup id="fnref:10"&gt;&lt;a href="#fn:10" class="footnote-ref" role="doc-noteref"&gt;10&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+&lt;li&gt;[11/02/2018] Group read of “Chapter 11: Information Theory and Statistics”&lt;sup id="fnref2:6"&gt;&lt;a href="#fn:6" class="footnote-ref" role="doc-noteref"&gt;6&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+&lt;li&gt;[10/26/2018] Group read of “Chapter 6: Gambling and Data Compression”&lt;sup id="fnref3:6"&gt;&lt;a href="#fn:6" class="footnote-ref" role="doc-noteref"&gt;6&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+&lt;li&gt;[10/19/2018] Dmitry Shemetov presents on “Chapter 2: Lower bounds on minimax risk”&lt;sup id="fnref:11"&gt;&lt;a href="#fn:11" class="footnote-ref" role="doc-noteref"&gt;11&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+&lt;li&gt;[10/12/2018] A problem solving session dedicated to Chapter 2&lt;sup id="fnref4:6"&gt;&lt;a href="#fn:6" class="footnote-ref" role="doc-noteref"&gt;6&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+&lt;li&gt;[10/05/2018] Dmitry Shemetov presents the foundational material from “Chapter 2: Entropy, Relative Entropy, Mutual Information”&lt;sup id="fnref5:6"&gt;&lt;a href="#fn:6" class="footnote-ref" role="doc-noteref"&gt;6&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+&lt;li&gt;[9/28/2018] Organizing meeting.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="references"&gt;References&lt;/h2&gt;
+&lt;div class="footnotes" role="doc-endnotes"&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;A. Singh, &lt;a href="https://www.cs.cmu.edu/~aarti/Class/10704_Fall16/lecs.html"&gt;“Data Processing and Information Theory Course Notes”&lt;/a&gt;&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href="#fnref1:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href="#fnref2:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href="#fnref3:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href="#fnref4:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;</description></item><item><title/><link>https://dshemetov.github.io/now/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dshemetov.github.io/now/</guid><description>&lt;h1 id="now"&gt;Now&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Updated: 2023-08-13&lt;/em&gt; (this is a &lt;a href="https://nownownow.com/about"&gt;now page&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Learning about:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rust for game development.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Currently reading:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.nytimes.com/2021/01/12/books/review-swim-pond-rain-george-saunders.html"&gt;&lt;em&gt;A Swim In A Pond In The Rain&lt;/em&gt;&lt;/a&gt; by George Saunders.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.goodreads.com/book/show/223380.Stories_of_Your_Life_and_Others"&gt;&lt;em&gt;Stories of Your Life and Others&lt;/em&gt;&lt;/a&gt; by Ted Chiang.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Fooled by Randomness&lt;/em&gt; by Nassim Taleb.&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title/><link>https://dshemetov.github.io/projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dshemetov.github.io/projects/</guid><description>&lt;h1 id="projects"&gt;Projects&lt;/h1&gt;
+&lt;h2 id="current"&gt;Current&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;2020-present&lt;/em&gt; I work as a statistical developer at &lt;a href="https://delphi.cmu.edu/"&gt;Delphi&lt;/a&gt;, a public health research group at Carnegie Mellon University.
+&lt;ul&gt;
+&lt;li&gt;Python, R, and SQL for data analysis and visualization.
+&lt;ul&gt;
+&lt;li&gt;Forecasting and time series analysis with &lt;a href="https://otexts.com/fpp3/"&gt;Forecasting: Principles and Practice&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Advanced R concepts with &lt;a href="https://adv-r.hadley.nz/"&gt;Advanced R&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;SQL for data analysis (Postgres and DuckDB).&lt;/li&gt;
+&lt;li&gt;Built web apps Django and FastAPI to serve epidata.&lt;/li&gt;
+&lt;li&gt;Built data pipelines with Airflow.&lt;/li&gt;
+&lt;li&gt;Built data pipelines with R &lt;code&gt;{targets}&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="past"&gt;Past&lt;/h2&gt;
+&lt;figure&gt;&lt;img src="https://dshemetov.github.io/images/math-dmitry.jpg" width="300px" height="300px"&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;I earned a PhD in Applied Mathematics from University of California, Davis in 2021, advised by &lt;a href="https://jsharpna.github.io/"&gt;James Sharpnack&lt;/a&gt;.
+My &lt;a href="https://scholar.google.com/citations?user=1XIVRXMAAAAJ"&gt;Google Scholar has my publications&lt;/a&gt;.&lt;/p&gt;</description></item></channel></rss>
