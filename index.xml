@@ -1,4 +1,48 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>┐｜･ิω･ิ#｜┌ Dmitry's Online Webpage</title><link>https://dshemetov.github.io/</link><description>Recent content on ┐｜･ิω･ิ#｜┌ Dmitry's Online Webpage</description><generator>Hugo</generator><language>en-us</language><copyright>Copyright © 2023</copyright><lastBuildDate>Sun, 13 Aug 2023 22:51:13 -0700</lastBuildDate><atom:link href="https://dshemetov.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Books 2023</title><link>https://dshemetov.github.io/books-2023/</link><pubDate>Sun, 13 Aug 2023 22:51:13 -0700</pubDate><guid>https://dshemetov.github.io/books-2023/</guid><description>&lt;p&gt;Here are a few books I read this year:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Dmitry's Very Online Internet Webpage Site</title><link>https://dshemetov.github.io/</link><description>Recent content in Home on Dmitry's Very Online Internet Webpage Site</description><generator>Hugo</generator><language>en-us</language><copyright>Copyright © 2025</copyright><lastBuildDate>Sun, 13 Aug 2023 22:51:13 -0700</lastBuildDate><atom:link href="https://dshemetov.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Now</title><link>https://dshemetov.github.io/now/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dshemetov.github.io/now/</guid><description>&lt;h1 id="now"&gt;Now&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Updated: 2025-09-28&lt;/em&gt; (this is a &lt;a href="https://nownownow.com/about"&gt;now page&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Work: statistical developer at &lt;a href="https://delphi.cmu.edu/"&gt;Delphi&lt;/a&gt;, a public health research group at Carnegie Mellon University.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Forecasting and time series analysis with &lt;a href="https://otexts.com/fpp3/"&gt;Forecasting: Principles and Practice&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Advanced R concepts with &lt;a href="https://adv-r.hadley.nz/"&gt;Advanced R&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;SQL for data analysis (Postgres and DuckDB).&lt;/li&gt;
+&lt;li&gt;Built web apps Django and FastAPI to serve epidata.&lt;/li&gt;
+&lt;li&gt;Built data pipelines with Airflow, R &lt;code&gt;{targets}&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Learning about (blog posts in progress):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bluetooth latency, network latency in the context of Steam Link streaming.&lt;/li&gt;
+&lt;li&gt;FastAPI and Postgres read speed. SQL query optimization.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/evinism/mistql/pull/194"&gt;Rust port of MistQL&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Rust for game development using &lt;a href="https://github.com/bevyengine/bevy"&gt;Bevy&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Currently reading:&lt;/p&gt;</description></item><item><title>Projects</title><link>https://dshemetov.github.io/projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dshemetov.github.io/projects/</guid><description>&lt;h1 id="projects"&gt;Projects&lt;/h1&gt;
+&lt;h2 id="current"&gt;Current&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Public health forecasting at &lt;a href="https://delphi.cmu.edu/"&gt;Delphi&lt;/a&gt;.
+&lt;ul&gt;
+&lt;li&gt;Producing R packages for epidemiological data processing and forecasting.
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/cmu-delphi/epidatr/"&gt;epidatr&lt;/a&gt; - a package for downloading and processing epidemiological data.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/cmu-delphi/epiprocess/"&gt;epiprocess&lt;/a&gt; - a package for processing epidemiological data.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/cmu-delphi/epipredict/"&gt;epipredict&lt;/a&gt; - a package for building forecasting models on epidata.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Built data pipelines (in Python, in R), designed forecasting models.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="past-projects"&gt;Past Projects&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;PhD in applied mathematics at University of California, Davis, advised by &lt;a href="https://jsharpna.github.io/"&gt;James Sharpnack&lt;/a&gt; (see a more complete history &lt;a href="https://dshemetov.github.io/academic"&gt;here&lt;/a&gt;).
+&lt;ul&gt;
+&lt;li&gt;Worked on statistical problems on graphs.&lt;/li&gt;
+&lt;li&gt;Applied graph theory and information theory to problems in epidemiology.&lt;/li&gt;
+&lt;li&gt;Studied statistical limits in hierarchical communication.&lt;/li&gt;
+&lt;li&gt;Taught courses in mathematics, probability, and statistics.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Software engineer at &lt;a href="https://patlive.com/"&gt;PATLive&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Books 2023</title><link>https://dshemetov.github.io/books-2023/</link><pubDate>Sun, 13 Aug 2023 22:51:13 -0700</pubDate><guid>https://dshemetov.github.io/books-2023/</guid><description>&lt;p&gt;Here are a few books I read this year:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.nytimes.com/2021/01/12/books/review-swim-pond-rain-george-saunders.html"&gt;&lt;em&gt;A Swim In A Pond In The Rain&lt;/em&gt;&lt;/a&gt; by George Saunders.&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.goodreads.com/book/show/223380.Stories_of_Your_Life_and_Others"&gt;&lt;em&gt;Stories of Your Life and Others&lt;/em&gt;&lt;/a&gt; by Ted Chiang.&lt;/li&gt;
@@ -104,38 +148,40 @@ The Binomial variable $\text{Bi}(n, \frac \lambda n)$ has the probability mass f
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id="fn:1"&gt;
-&lt;p&gt;A. Singh, &lt;a href="https://www.cs.cmu.edu/~aarti/Class/10704_Fall16/lecs.html"&gt;“Data Processing and Information Theory Course Notes”&lt;/a&gt;&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href="#fnref1:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href="#fnref2:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href="#fnref3:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href="#fnref4:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;</description></item><item><title/><link>https://dshemetov.github.io/now/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dshemetov.github.io/now/</guid><description>&lt;h1 id="now"&gt;Now&lt;/h1&gt;
-&lt;p&gt;&lt;em&gt;Updated: 2023-08-13&lt;/em&gt; (this is a &lt;a href="https://nownownow.com/about"&gt;now page&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;Learning about:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Rust for game development.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Currently reading:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.nytimes.com/2021/01/12/books/review-swim-pond-rain-george-saunders.html"&gt;&lt;em&gt;A Swim In A Pond In The Rain&lt;/em&gt;&lt;/a&gt; by George Saunders.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.goodreads.com/book/show/223380.Stories_of_Your_Life_and_Others"&gt;&lt;em&gt;Stories of Your Life and Others&lt;/em&gt;&lt;/a&gt; by Ted Chiang.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Fooled by Randomness&lt;/em&gt; by Nassim Taleb.&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title/><link>https://dshemetov.github.io/projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dshemetov.github.io/projects/</guid><description>&lt;h1 id="projects"&gt;Projects&lt;/h1&gt;
-&lt;h2 id="current"&gt;Current&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;2020-present&lt;/em&gt; I work as a statistical developer at &lt;a href="https://delphi.cmu.edu/"&gt;Delphi&lt;/a&gt;, a public health research group at Carnegie Mellon University.
-&lt;ul&gt;
-&lt;li&gt;Python, R, and SQL for data analysis and visualization.
-&lt;ul&gt;
-&lt;li&gt;Forecasting and time series analysis with &lt;a href="https://otexts.com/fpp3/"&gt;Forecasting: Principles and Practice&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Advanced R concepts with &lt;a href="https://adv-r.hadley.nz/"&gt;Advanced R&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;SQL for data analysis (Postgres and DuckDB).&lt;/li&gt;
-&lt;li&gt;Built web apps Django and FastAPI to serve epidata.&lt;/li&gt;
-&lt;li&gt;Built data pipelines with Airflow.&lt;/li&gt;
-&lt;li&gt;Built data pipelines with R &lt;code&gt;{targets}&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="past"&gt;Past&lt;/h2&gt;
+&lt;p&gt;A. Singh, &lt;a href="https://www.cs.cmu.edu/~aarti/Class/10704_Fall16/lecs.html"&gt;“Data Processing and Information Theory Course Notes”&lt;/a&gt;&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href="#fnref1:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href="#fnref2:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href="#fnref3:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href="#fnref4:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;</description></item><item><title/><link>https://dshemetov.github.io/academic/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dshemetov.github.io/academic/</guid><description>&lt;h1 id="academic-history"&gt;Academic History&lt;/h1&gt;
 &lt;figure&gt;&lt;img src="https://dshemetov.github.io/images/math-dmitry.jpg" width="300px" height="300px"&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;I earned a PhD in Applied Mathematics from University of California, Davis in 2021, advised by &lt;a href="https://jsharpna.github.io/"&gt;James Sharpnack&lt;/a&gt;.
-My &lt;a href="https://scholar.google.com/citations?user=1XIVRXMAAAAJ"&gt;Google Scholar has my publications&lt;/a&gt;.&lt;/p&gt;</description></item></channel></rss>
+My &lt;a href="https://scholar.google.com/citations?user=1XIVRXMAAAAJ"&gt;Google Scholar has my publications&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;My PhD work studied statistical problems on graphs.
+Specifically, I was interested in&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;information theory and statistics with memory constraints,&lt;/li&gt;
+&lt;li&gt;networks and graph algorithms,&lt;/li&gt;
+&lt;li&gt;combinatorics, probability, and Markov Chains.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="timeline"&gt;Timeline&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Mar, 2021&lt;/em&gt; Finished my dissertation titled &amp;ldquo;Concerning Some Statistical Problems on Graphs&amp;rdquo; and received my doctorate.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Aug, 2020&lt;/em&gt; Began work at Delphi, helping build COVID forecasting models and engineering epidata pipelines.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Oct, 2019&lt;/em&gt; Attended &lt;a href="https://geovet2019.ucdavis.edu/"&gt;GeoVet 2019&lt;/a&gt;. James presented our work on scan statistics epidemiology.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Aug, 2019&lt;/em&gt; Presented a poster at &lt;a href="https://www.kdd.org/kdd2019/"&gt;KDD2019&lt;/a&gt; in Anchorage, Alaska.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Summer, 2019&lt;/em&gt; Started a project to apply scan statistics to epidemiology with Beatriz Lopez and James Sharpnack.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Mar, 2019&lt;/em&gt; Our paper &lt;a href="https://arxiv.org/abs/1802.08736"&gt;“Estimating Graphlet Statistics via Lifting”&lt;/a&gt; was accepted for a poster presentation at &lt;a href="https://www.kdd.org/kdd2019/"&gt;KDD2019&lt;/a&gt;! Big thanks to Kiril Paramonov for the conceptual work and to James for including me on the project.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;2018-2019&lt;/em&gt; Organized the reading group &lt;a href="https://dshemetov.github.io/information-theory-reading-group"&gt;“Information Theory and Statistics”&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Jul, 2018&lt;/em&gt; Gave a talk on &lt;a href="http://meetings.siam.org/sess/dsp_talk.cfm?p=94861"&gt;“Statistical Limits in Hierarchical Communication”&lt;/a&gt; in the Student Chapter Presentations section at the &lt;a href="https://www.siam.org/Conferences/CM/Main/an18"&gt;2018 SIAM Annual Meeting&lt;/a&gt; in Portland, Oregon.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Jun, 2018&lt;/em&gt; Passed my qualifying exam with a proposal titled “Towards Statistical Limits in Hierarchical Communication”.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Summer, 2017&lt;/em&gt; Participated in the &lt;a href="https://www.lanl.gov/projects/national-security-education-center/information-science-technology/summer-schools/applied-machine-learning/index.php"&gt;Machine Learning Summer Program&lt;/a&gt; at Los Alamos National Lab. I studied parameter learning in models of power transmission with &lt;a href="https://cnls.lanl.gov/External/people/Marc_Vuffray.php"&gt;Marc Vuffray&lt;/a&gt; and &lt;a href="http://lptms.u-psud.fr/andrey-lokhov/"&gt;Andrey Lokhov&lt;/a&gt;. Our paper was accepted to &lt;a href="https://pscc2018.net/"&gt;PSCC2018&lt;/a&gt;: &lt;a href="https://arxiv.org/abs/1710.10021"&gt;“Online Learning of Power Transmission Dynamics”&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Jan, 2017&lt;/em&gt; Co-organized the Davis Math Conference, a conference for professors and students to communicate their research in the Davis Math department.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;2014-2016&lt;/em&gt; Studied the inference of stochastic processes with memory, using Hidden Markov Models, information theory, and computational mechanics with Jim Crutchfield.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="courses-taught-as-teaching-assistant"&gt;Courses Taught as Teaching Assistant&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;MAT135 Probability and Stochastic Processes&lt;/li&gt;
+&lt;li&gt;MAT129 Fourier Analysis&lt;/li&gt;
+&lt;li&gt;MAT125 Real Analysis&lt;/li&gt;
+&lt;li&gt;MAT108 Logic and Proofs&lt;/li&gt;
+&lt;li&gt;MAT22 Linear Algebra and Differential Equations&lt;/li&gt;
+&lt;li&gt;MAT21 Calculus&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>
