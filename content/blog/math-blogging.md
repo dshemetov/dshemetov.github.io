@@ -6,6 +6,7 @@ tags = [
     "blogging",
     "hugo"
 ]
+math = true
 +++
 
 A few cute derivations to test math blogging with [Hugo](https://gohugo.io).
@@ -20,7 +21,7 @@ First, let us recall a few definitions.
 The Binomial variable $\text{Bi}(n, \frac \lambda n)$ has the probability mass function (pmf)
 
 $$
-    p_B\left \(k; n, \frac \lambda n \right \) = {n \choose k} \left(\frac \lambda n \right)^k \left(1 - \frac \lambda n \right)^{n-k},
+    p_B\left(k; n, \frac \lambda n \right) = {n \choose k} \left(\frac \lambda n \right)^k \left(1 - \frac \lambda n \right)^{n-k},
 $$
 
 while the Poisson variable $\text{Po}(\lambda)$ has the pmf

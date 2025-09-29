@@ -1,0 +1,31 @@
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+MathJax = {
+    loader: {
+    load: ['[tex]/mathtools']
+    },
+    tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$','$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    macros: {
+        R: '{\\mathbb R}',
+        Z: '{\\mathbb Z}',
+        C: '{\\mathbb C}',
+    },
+    packages: {
+        '[+]': ['mathtools']
+    }
+    },
+    options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+};
+
+window.addEventListener('load', (event) => {
+    document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>

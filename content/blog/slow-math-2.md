@@ -6,6 +6,7 @@ tags = [
 	"math",
 	"number theory"
 ]
+math = true
 +++
 
 On this installment of Chill Math Friends, we learned a bit about a fast algorithm for $\pi$ and elliptic integrals.

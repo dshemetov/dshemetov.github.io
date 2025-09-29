@@ -1,3 +1,4 @@
+/* Custom colors for the dark theme */
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #1a2638;
@@ -9,21 +10,26 @@
     }
 }
 
+/* Default links have no underline */
 a {
     text-decoration: none;
 }
+/* Hovered links have an underline */
 a:hover {
-    text-decoration: underline; 
+    text-decoration: underline;
 }
 
+/* List items have a counter */
 ol li {
-    counter-increment: listCounter; 
+    counter-increment: listCounter;
 }
 
+/* List item counter */
 ol li::marker {
     content: '(' counter(listCounter) ").  ";
 }
 
+/* Figure styles */
 figure {
     text-align: center;
     font-style: italic;
@@ -34,20 +40,19 @@ figure {
     margin-right:auto;
     max-width:75%;
 }
-
 figure.left{
     float:left;
     margin-right:2em;
     max-width:75%;
 }
-
 figure.right{
     float:right;
     margin-left:2em;
     max-width:75%;
 }
 
-@media(max-width:800px) {
+/* Custom styles for phone screens */
+@media (max-width:800px) {
     figure.left,
     figure.right{
         float:none;

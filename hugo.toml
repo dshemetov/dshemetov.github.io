@@ -1,24 +1,37 @@
 baseUrl = "https://dshemetov.github.io"
 theme = "hugo-bearblog"
-title = "┐｜･ิω･ิ#｜┌ Dmitry's Online Webpage"
+title = "Dmitry's Very Online Internet Site"
 author = "Dmitry Shemetov"
-copyright = "Copyright © 2023"
+copyright = "Copyright © 2025"
 languageCode = "en-us"
 enableRobotsTXT = true
+image = "https://dshemetov.github.io/images/math-dmitry.jpg"
 
-[[menu.main]]
-name = "Projects"
-url = "/projects/"
-
-[[menu.main]]
-name = "Now"
-url = "/now/"
+disableKinds = ["taxonomy"]
+ignoreErrors = ["error-disable-taxonomy"]
 
 [permalinks]
 blog = "/:slug/"
 tags = "/blog/:slug"
 
 [params]
-images = ["https://dshemetov.github.io/images/math-dmitry.jpg"]
-mathjax = true
 custom_css = "assets/css/custom.css"
+math = false
+dateFormat = "2006-01-02"
+
+[markup]
+  # https://gohugo.io/content-management/mathematics/
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
+
+  [markup.highlight]
+    # https://gohugo.io/quick-reference/syntax-highlighting-styles/#doom-one2
+    style = 'doom-one2'
+    lineNos = true
+    lineNumbersInTable = false
+    codeFences = true

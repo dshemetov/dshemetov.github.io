@@ -1,11 +1,12 @@
-<!--for overriding-->
-{{ if .Site.Params.mathjax }}{{ partial "mathjax_support.html" . }}{{ end }}
+{{ if .Param "math" }}
+  {{ partialCached "math.html" . }}
+{{ end }}
 
+<!--for overriding-->
 <style type="text/css">
 {{ if .Site.Params.custom_css }}
 {{ readFile .Site.Params.custom_css | safeCSS }}
-{{ end }}
-</style>
+{{ end }}</style>
 
 <!-- This is for link previews for services like Discord -->
 <!-- See the Open Graph protocol https://ogp.me/ -->
@@ -15,4 +16,5 @@
 <meta property="og:description" content="{{ .Site.Params.meta.description }}">
 <meta property="og:image" content="{{ .Site.Params.meta.image }}">
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.meta.description }}{{ . }}{{ end }}{{ end }}{{ end -}}">
+
 

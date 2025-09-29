@@ -6,6 +6,7 @@ tags = [
     "math",
     "number theory"
 ]
+math = true
 +++
 
 My good friend [Jordan](https://jasnyder.github.io/) and I are doing some recreational math together.

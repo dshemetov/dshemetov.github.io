@@ -6,6 +6,7 @@ tags = [
     "math",
     "asymptotics"
 ]
+math = true
 +++
 
 In the [math test post](/blog/binomial-poisson), we briefly discussed how to arrive at Stirling's approximation.
