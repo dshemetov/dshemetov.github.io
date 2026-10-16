@@ -1,11 +1,10 @@
 ---
 # Generated from the Obsidian vault by scripts/vault_export.py. Edit the note there.
 title: Debugging SteamLink Streaming Issues
-date: 2026-10-17T00:00:00-07:00
+date: 2026-10-17T16:32:15-07:00
 tags:
-  - steam
-  - streaming
   - TIL
+  - gaming
 ---
 When debugging streaming issues with SteamLink, their built-in latency graph is very useful. You might be able to get it to display with F6 or you might just need to go to Settings > Remote Play > Performance Overlay > Show Details. Here is what it looks like (older graphs replace the yellow line with a light blue line):
 

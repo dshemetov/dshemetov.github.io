@@ -4,12 +4,11 @@ title: Euler-Maclaurin Formula
 date: 2022-08-31T09:58:27-07:00
 toc: true
 tags:
-- math
-- asymptotics
+  - math
 math: true
 ---
 
-In the [math test post](/blog/binomial-poisson), we briefly discussed how to arrive at Stirling's approximation.
+In the [math test post]({{< relref "/blog/math-blogging" >}}), we briefly discussed how to arrive at Stirling's approximation.
 Here, we go deeper.
 
 ## Asymptotic Behavior of the Harmonic Series

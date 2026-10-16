@@ -3,9 +3,7 @@
 title: Math Blogging
 date: 2019-11-07
 tags:
-- math
-- blogging
-- hugo
+  - math
 math: true
 ---
 

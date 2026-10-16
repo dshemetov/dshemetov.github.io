@@ -4,8 +4,7 @@ title: Fast Algorithms for $\pi$ and Elliptic Integrals
 date: 2023-03-05T14:04:04-08:00
 toc: true
 tags:
-- math
-- number theory
+  - math
 math: true
 ---
 

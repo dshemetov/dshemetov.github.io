@@ -4,7 +4,8 @@ title: Python Project Structures
 date: 2022-09-02T17:29:37-07:00
 toc: true
 tags:
-- python
+  - python
+  - software
 ---
 
 Updated on: 2023-07-24.
