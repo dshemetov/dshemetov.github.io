@@ -1,4 +1,5 @@
 ---
+# Generated from the Obsidian vault by scripts/vault_export.py. Edit the note there.
 title: Unicode, String Encodings, and Python
 date: 2022-09-01T11:20:59-07:00
 toc: true

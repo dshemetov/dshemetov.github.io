@@ -1,4 +1,5 @@
 ---
+# Generated from the Obsidian vault by scripts/vault_export.py. Edit the note there.
 title: A Diversion Into Number Theory
 date: 2023-02-18T12:12:48-08:00
 toc: true

@@ -1,4 +1,5 @@
 ---
+# Generated from the Obsidian vault by scripts/vault_export.py. Edit the note there.
 title: Books 2023
 date: 2023-08-13T22:51:13-07:00
 tags:

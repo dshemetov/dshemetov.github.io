@@ -1,4 +1,5 @@
 ---
+# Generated from the Obsidian vault by scripts/vault_export.py. Edit the note there.
 title: Math Blogging
 date: 2019-11-07
 tags:

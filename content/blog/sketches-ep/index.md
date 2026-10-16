@@ -1,4 +1,5 @@
 ---
+# Generated from the Obsidian vault by scripts/vault_export.py. Edit the note there.
 title: Sketches EP
 date: 2023-04-17T22:50:55-07:00
 tags:

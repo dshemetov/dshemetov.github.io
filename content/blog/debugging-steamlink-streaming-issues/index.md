@@ -1,4 +1,5 @@
 ---
+# Generated from the Obsidian vault by scripts/vault_export.py. Edit the note there.
 title: Debugging SteamLink Streaming Issues
 date: 2026-10-17T00:00:00-07:00
 tags:

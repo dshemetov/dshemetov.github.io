@@ -1,4 +1,5 @@
 ---
+# Generated from the Obsidian vault by scripts/vault_export.py. Edit the note there.
 title: Python Project Structures
 date: 2022-09-02T17:29:37-07:00
 toc: true

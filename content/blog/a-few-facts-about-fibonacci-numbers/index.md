@@ -1,4 +1,5 @@
 ---
+# Generated from the Obsidian vault by scripts/vault_export.py. Edit the note there.
 title: A Few Facts About Fibonacci Numbers
 date: 2019-12-05T14:04:04-08:00
 tags:
