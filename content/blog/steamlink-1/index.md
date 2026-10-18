@@ -1,10 +1,16 @@
-# TIL - Debugging SteamLink Streaming Issues
-
+---
+title: Debugging SteamLink Streaming Issues
+date: 2026-10-17T00:00:00-07:00
+tags:
+  - steam
+  - streaming
+  - TIL
+---
 When debugging streaming issues with SteamLink, their built-in latency graph is very useful. You might be able to get it to display with F6 or you might just need to go to Settings > Remote Play > Performance Overlay > Show Details. Here is what it looks like (older graphs replace the yellow line with a light blue line):
 
-![[steamlink.jpeg|666]]
+![Steam Link performance overlay graph](steamlink.jpeg)
 
-The documentation for the graph's color coding seems limited to an [outdated 2014 forum post](https://steamcommunity.com/groups/homestream/discussions/0/540732889636623310/#c540732889652053359), but as far as I can tell, the blue is host encoding time, the yellow is the network time, the red is the client decode time. 
+The documentation for the graph's color coding seems limited to an [outdated 2014 forum post](https://steamcommunity.com/groups/homestream/discussions/0/540732889636623310/#c540732889652053359), but as far as I can tell, the blue is host encoding time, the yellow is the network time, the red is the client decode time.
 
 To cut network problems out of the picture, hardwire the host and the client - even with a fast WiFi router, interference from other devices is degrades connection and is hard to control (especially in heavy residential areas). Make sure your ethernet cable is Cat 5 or higher and your network switch (if you use one) is 1Gbps or higher. 
 
