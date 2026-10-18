@@ -1,13 +1,7 @@
 {{ define "main" }}
 {{ if eq .Type "blog" }}{{ if not .Params.menu }}
 <h1>{{ .Title }}</h1>
-<p>
-  <i>
-    <time datetime='{{ .Date.Format "2006-01-02T15:04:05-07:00" }}'>
-      {{ .Date.Format "2006-01-02 15:04" }}
-    </time>
-  </i>
-</p>
+<p class="entry-date"><i>{{ partial "date-long.html" .Date }}</i></p>
 {{ end }}{{ end }}
 
 {{ if and (gt .WordCount 400 ) (.Params.toc) }}
@@ -25,9 +19,5 @@
 {{- partial "post_navigator.html" . -}}
 {{ end }}{{ end }}
 
-<p>
-  {{ range (.GetTerms "tags") }}
-  <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
-  {{ end }}
-</p>
+{{ if eq .Type "blog" }}{{ partial "entry-footer.html" . }}{{ end }}
 {{ end }}

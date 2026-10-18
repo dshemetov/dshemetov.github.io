@@ -79,3 +79,31 @@ code.has-jax {
     border: none !important;
     font-size: 100%;
 }
+/* Home page stream of posts */
+.stream .entry {
+    margin-bottom: 2em;
+}
+.stream .entry + .entry {
+    border-top: 1px solid color-mix(in srgb, var(--text-color) 35%, transparent);
+    padding-top: 1.5em;
+}
+.stream .entry h2 {
+    margin-bottom: 0;
+}
+.entry-date {
+    margin-top: 0.3em;
+}
+.entry-footer {
+    font-size: smaller;
+}
+.entry-footer .tag {
+    margin-left: 0.5em;
+}
+
+/* TIL posts get a highlighted tag */
+.tag-til {
+    background-color: #eba613;
+    color: #1a2638;
+    padding: 0 0.4em;
+    border-radius: 4px;
+}

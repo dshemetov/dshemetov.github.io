@@ -1,4 +1,4 @@
-{{ if .Param "math" }}
+{{ if or (.Param "math") .IsHome }}
   {{ partialCached "math.html" . }}
 {{ end }}
 

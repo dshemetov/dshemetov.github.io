@@ -1,0 +1,15 @@
+{{ define "main" }}
+{{ .Content }}
+<div class="stream">
+  {{ range first 20 (where site.RegularPages "Section" "blog") }}
+  <article class="entry">
+    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    <p class="entry-date"><i>{{ partial "date-long.html" .Date }}</i></p>
+    {{ .Summary }}
+    {{ if .Truncated }}<p><a href="{{ .Permalink }}">Read more →</a></p>{{ end }}
+    {{ partial "entry-footer.html" . }}
+  </article>
+  {{ end }}
+</div>
+<p><a href="{{ "blog/" | relURL }}">All posts →</a></p>
+{{ end }}

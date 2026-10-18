@@ -1,0 +1,8 @@
+{{- /* Formats a date like "Friday, 17th October 2026". */ -}}
+{{- $day := .Day -}}
+{{- $suffix := "th" -}}
+{{- if not (in (slice 11 12 13) $day) -}}
+  {{- $last := mod $day 10 -}}
+  {{- if eq $last 1 }}{{ $suffix = "st" }}{{ else if eq $last 2 }}{{ $suffix = "nd" }}{{ else if eq $last 3 }}{{ $suffix = "rd" }}{{ end -}}
+{{- end -}}
+<time datetime='{{ .Format "2006-01-02T15:04:05-07:00" }}'>{{ .Format "Monday" }}, {{ $day }}{{ $suffix }} {{ .Format "January 2006" }}</time>

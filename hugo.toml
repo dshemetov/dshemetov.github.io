@@ -35,3 +35,7 @@ style = 'doom-one2'
 lineNos = true
 lineNumbersInTable = false
 codeFences = true
+
+[markup.goldmark.renderHooks.image]
+# Resolve bundle images to full paths so they also work in home page summaries.
+useEmbedded = "fallback"

@@ -1,5 +1,5 @@
 ---
-title: Blog
+title: Archive
 menu: main
-weight: 100
+weight: 2
 ---
