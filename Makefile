@@ -9,3 +9,9 @@ build:
 
 serve:
 	hugo server
+
+# Usage: make post name=my-post
+post:
+	@test -n "$(name)" || { echo "usage: make post name=my-post"; exit 1; }
+	hugo new content blog/$(name)/index.md
+	xdg-open "obsidian://open?path=$(CURDIR)/content/blog/$(name)/index.md"
