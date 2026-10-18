@@ -1,15 +1,13 @@
 ---
 # Generated from the Obsidian vault by scripts/vault_export.py. Edit the note there.
 title: Math Blogging
-date: 2019-11-07
+date: 2019-11-07T14:04:04-08:00
 tags:
   - math
 math: true
 ---
 
 A few cute derivations to test math blogging with [Hugo](https://gohugo.io).
-
-## Binomial Limit to Poisson
 
 A basic fact about Binomial distributions is that they can be approximated by the Poisson distribution in a certain limit.
 As is often the case in probability, you can show this with generating functions.

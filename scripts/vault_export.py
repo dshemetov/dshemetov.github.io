@@ -38,13 +38,20 @@ def warn(note: Path, msg: str) -> None:
     print(f"warning: {note.name}: {msg}", file=sys.stderr)
 
 
+def read_front_matter(text: str) -> dict:
+    fm = FRONT_MATTER.match(text)
+    return (yaml.safe_load(fm.group(1)) if fm else None) or {}
+
+
 class Exporter:
     def __init__(self, vault: Path, out: Path):
         self.vault = vault
         self.out = out
-        self.notes = sorted(
+        candidates = sorted(
             p for p in (vault / "blog").rglob("*.md") if p.read_text().strip()
         )
+        self.notes = [p for p in candidates if not read_front_matter(p.read_text()).get("draft")]
+        self.drafts = len(candidates) - len(self.notes)
         self.slugs = {p.stem.lower(): slugify(p.stem) for p in self.notes}
         self.files: dict[str, list[Path]] = {}
         for p in vault.rglob("*"):
@@ -124,7 +131,7 @@ class Exporter:
     def export_note(self, note: Path) -> None:
         text = note.read_text()
         fm = FRONT_MATTER.match(text)
-        data = (yaml.safe_load(fm.group(1)) if fm else None) or {}
+        data = read_front_matter(text)
         if "date" not in data:
             text = self.ensure_date(note, text, fm)
             fm = FRONT_MATTER.match(text)
@@ -153,7 +160,7 @@ class Exporter:
                 p.unlink()
         for note in self.notes:
             self.export_note(note)
-        print(f"exported {len(self.notes)} posts to {self.out}")
+        print(f"exported {len(self.notes)} posts to {self.out}, skipped {self.drafts} drafts")
 
 
 def read_group(s: str, i: int) -> tuple[str, int]:

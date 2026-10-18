@@ -11,7 +11,7 @@ install-hugo:
 build:
     hugo build
 
-# Serve locally; pass -D to include drafts
+# Serve locally
 serve *args:
     hugo server {{ args }}
 

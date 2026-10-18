@@ -9,8 +9,6 @@ math: true
 
 More [math blog testing]({{< relref "/blog/math-blogging" >}}). From a number theory course I graded a few years ago.
 
-## Fibonacci Numbers
-
 __Definition 1.__ The Fibonacci numbers are defined by $f_0 = 0, f_1 = 1$ and the recursive relation
 $$f_n \coloneqq f_{n-1} + f_{n-2}, \ \ n \geq 1.$$
 

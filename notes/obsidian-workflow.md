@@ -5,14 +5,14 @@ Blog posts live in the `blog/` folder of the Obsidian vault (`~/Documents/obsidi
 ## Workflow
 
 1. Write a note in the vault's `blog/` folder. Move a note there to make it a post.
-2. Keep `draft: true` in its properties until it's ready. Drafts are exported and committed but not published (`just serve -D` shows them locally).
+2. Keep `draft: true` in its properties until it's ready. Drafts stay in the vault: the export skips them, so they never reach this repo.
 3. Run `just sync` in this repo, review the diff, and commit.
 
 Set `OBSIDIAN_VAULT` if the vault lives somewhere else on a machine.
 
 ## What the export does
 
-`scripts/vault_export.py` regenerates every bundle in `content/blog/` (except `_index.md`) from the vault:
+`scripts/vault_export.py` regenerates every bundle in `content/blog/` (except `_index.md`) from the vault's non-draft notes:
 
 - Each note `blog/My Post.md` becomes `content/blog/my-post/index.md`. The page URL still comes from the title (see `[permalinks]` in `hugo.toml`), not the filename.
 - Missing `title` defaults to the note's filename. A missing `date` is set to the current time and written back into the vault note, so it stays fixed across exports.
