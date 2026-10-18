@@ -146,10 +146,12 @@ class Exporter:
             text = self.ensure_date(note, text, fm)
             fm = FRONT_MATTER.match(text)
         header = fm.group(1)
+        slug = self.slugs[note.stem.lower()]
         if not data.get("title"):
+            # Untitled posts show their date as the title; the slug keeps the URL tied to the filename.
             header = re.sub(r"^title:.*\n?", "", header, flags=re.M)
-            header = f"title: {yaml.safe_dump(note.stem).splitlines()[0]}\n{header}"
-        bundle = self.out / self.slugs[note.stem.lower()]
+            header = f"slug: {yaml.safe_dump(slug).splitlines()[0]}\n{header}"
+        bundle = self.out / slug
         body = self.convert(note, bundle, text[fm.end() :])
         bundle.mkdir(parents=True, exist_ok=True)
         (bundle / "index.md").write_text(f"---\n{GENERATED_NOTE}{header}\n---\n{body}")

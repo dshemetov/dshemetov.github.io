@@ -1,0 +1,2 @@
+{{- /* A post's title, or its long-form date when it has no title. */ -}}
+{{- with .Title }}{{ . }}{{ else }}{{ partial "date-long.html" .Date }}{{ end -}}

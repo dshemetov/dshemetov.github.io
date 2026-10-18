@@ -15,7 +15,7 @@ Set `OBSIDIAN_VAULT` if the vault lives somewhere else on a machine.
 `scripts/vault_export.py` regenerates every bundle in `content/blog/` (except `_index.md`) from the vault's non-draft notes:
 
 - Each note `blog/My Post.md` becomes `content/blog/my-post/index.md`. The page URL still comes from the title (see `[permalinks]` in `hugo.toml`), not the filename.
-- Missing `title` defaults to the note's filename. A missing `date` is set to the current time and written back into the vault note, so it stays fixed across exports.
+- A post without a `title` uses its date as the title and link text, and its URL comes from the note's filename. A missing `date` is set to the current time and written back into the vault note, so it stays fixed across exports.
 - `![[image.png]]`, `![[image.png|alt text]]` and `![alt](image.png)` copy the image into the bundle (spaces in filenames become `-`) and become standard markdown images. `![[image.png|600]]` becomes a `figure` shortcode with that width. An italic line directly under an image embed (`*A caption.*`) becomes the figure's caption. Images are found the way Obsidian finds them: relative to the note first, then by filename anywhere in the vault.
 - `[[Other Post]]`, `[[Other Post|label]]` and `[[Other Post#Heading]]` become `relref` links when the target is another note in `blog/`. Links to notes outside `blog/` become plain text, with a warning, so private notes don't leak.
 - `%%comments%%` are removed.

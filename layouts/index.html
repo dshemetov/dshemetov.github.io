@@ -6,8 +6,8 @@
   {{ $longform := gt .WordCount 300 }}
   {{ if isset .Params "longform" }}{{ $longform = .Params.longform }}{{ end }}
   <article class="entry">
-    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-    <p class="entry-date"><i>{{ partial "date-long.html" .Date }}</i></p>
+    <h2><a href="{{ .Permalink }}">{{ partial "title.html" . }}</a></h2>
+    {{ with .Title }}<p class="entry-date"><i>{{ partial "date-long.html" $.Date }}</i></p>{{ end }}
     {{ if $longform }}
       {{ partial "excerpt.html" . }}
       <p><a href="{{ .Permalink }}">[… {{ lang.FormatNumber 0 .WordCount }} words]</a></p>

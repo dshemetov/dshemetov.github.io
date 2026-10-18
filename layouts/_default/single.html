@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{ if eq .Type "blog" }}{{ if not .Params.menu }}
-<h1>{{ .Title }}</h1>
-<p class="entry-date"><i>{{ partial "date-long.html" .Date }}</i></p>
+<h1>{{ partial "title.html" . }}</h1>
+{{ with .Title }}<p class="entry-date"><i>{{ partial "date-long.html" $.Date }}</i></p>{{ end }}
 {{ end }}{{ end }}
 
 {{ if and (gt .WordCount 400 ) (.Params.toc) }}
