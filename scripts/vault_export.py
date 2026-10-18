@@ -129,7 +129,8 @@ class Exporter:
             text = self.ensure_date(note, text, fm)
             fm = FRONT_MATTER.match(text)
         header = fm.group(1)
-        if "title" not in data:
+        if not data.get("title"):
+            header = re.sub(r"^title:.*\n?", "", header, flags=re.M)
             header = f"title: {yaml.safe_dump(note.stem).splitlines()[0]}\n{header}"
         bundle = self.out / self.slugs[note.stem.lower()]
         body = self.convert(note, bundle, text[fm.end() :])
