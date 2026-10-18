@@ -6,8 +6,6 @@ aliases:
   - /delphi-projects/
 title: Recent Delphi Projects
 ---
-> Test quote block.
-> - Source Name, "Here".
 
 A large portion of my work at Delphi has involved producing R packages for epidemiological data processing and forecasting. This includes:
 

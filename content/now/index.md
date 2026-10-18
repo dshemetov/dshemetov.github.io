@@ -12,5 +12,4 @@ Work: statistical developer at [Delphi](https://delphi.cmu.edu/), a public healt
 
 Currently reading:
 
-- [_High Performance Browser Networking_](https://hpbn.co) by Ilya Grigorik.
-
+- [Designing Data-Intensive Applications (DDIA) — an O’Reilly book by Martin Kleppmann (The Wild Boar Book)](https://dataintensive.net)
