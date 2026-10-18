@@ -1,4 +1,5 @@
 ---
+# Generated from the Obsidian vault by scripts/vault_export.py. Edit the note there.
 title: Now
 menu: main
 weight: 10

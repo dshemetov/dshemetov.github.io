@@ -17,10 +17,14 @@ Set `OBSIDIAN_VAULT` if the vault lives somewhere else on a machine.
 - Each note `blog/My Post.md` becomes `content/blog/my-post/index.md`. The page URL still comes from the title (see `[permalinks]` in `hugo.toml`), not the filename.
 - A post without a `title` uses its date as the title and link text, and its URL comes from the note's filename. A missing `date` is set to the current time and written back into the vault note, so it stays fixed across exports.
 - `![[image.png]]`, `![[image.png|alt text]]` and `![alt](image.png)` copy the image into the bundle (spaces in filenames become `-`) and become standard markdown images. `![[image.png|600]]` becomes a `figure` shortcode with that width. An italic line directly under an image embed (`*A caption.*`) becomes the figure's caption. Images are found the way Obsidian finds them: relative to the note first, then by filename anywhere in the vault.
-- `[[Other Post]]`, `[[Other Post|label]]` and `[[Other Post#Heading]]` become `relref` links when the target is another note in `blog/`. Links to notes outside `blog/` become plain text, with a warning, so private notes don't leak.
+- `[[Other Post]]`, `[[Other Post|label]]` and `[[Other Post#Heading]]` become `relref` links when the target is another note in `blog/` or `site/`. Links to other notes become plain text, with a warning, so private notes don't leak.
 - `%%comments%%` are removed.
 - Code blocks and inline code are left untouched.
 - Embeds of non-image files (other notes, PDFs) are left as is, with a warning.
+
+## Site pages
+
+Standalone pages like the now page live in the vault's `site/` folder. Each note `site/Now.md` becomes `content/now/index.md`, served at `/now/`. Its properties (`title`, `menu`, `weight`) go straight into the Hugo front matter. Site pages skip the blog rules: no drafts, no date or slug write-back, no date-based URL. Images, comments and wikilinks convert the same way as in posts, and `[[Now]]` from a post links to the page.
 
 ## Home page
 

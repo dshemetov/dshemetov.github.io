@@ -2,7 +2,7 @@
 # requires-python = ">=3.12"
 # dependencies = ["pyyaml", "typer"]
 # ///
-"""Export blog posts from an Obsidian vault into Hugo page bundles.
+"""Export blog posts and site pages from an Obsidian vault into Hugo page bundles.
 
 See notes/obsidian-workflow.md for the workflow and conversion rules.
 """
@@ -65,6 +65,11 @@ class Exporter:
         self.notes = [p for p in candidates if not read_front_matter(p.read_text()).get("draft")]
         self.drafts = len(candidates) - len(self.notes)
         self.slugs = {p.stem.lower(): slugify(p.stem) for p in self.notes}
+        site = vault / "site"
+        self.pages = sorted(p for p in site.glob("*.md") if p.read_text().strip()) if site.is_dir() else []
+        # Wikilink targets: blog posts, then site pages like /now.
+        self.links = {k: f"/blog/{v}" for k, v in self.slugs.items()}
+        self.links |= {p.stem.lower(): f"/{slugify(p.stem)}" for p in self.pages}
         self.files: dict[str, list[Path]] = {}
         for p in vault.rglob("*"):
             if p.is_file() and not SKIP_DIRS & set(p.relative_to(vault).parts):
@@ -120,12 +125,12 @@ class Exporter:
         def wikilink(m: re.Match) -> str:
             target, heading, alias = m.group(1).strip(), m.group(2), m.group(3)
             label = alias or target
-            slug = self.slugs.get(target.lower())
-            if slug is None:
-                warn(note, f"[[{target}]] is not a blog post, exported as plain text")
+            path = self.links.get(target.lower())
+            if path is None:
+                warn(note, f"[[{target}]] is not a published note, exported as plain text")
                 return label
             anchor = f"#{slugify(heading)}" if heading else ""
-            return f'[{label}]({{{{< relref "/blog/{slug}{anchor}" >}}}})'
+            return f'[{label}]({{{{< relref "{path}{anchor}" >}}}})'
 
         def transform(segment: str) -> str:
             segment = COMMENT.sub("", segment)
@@ -199,6 +204,20 @@ class Exporter:
             self.export_note(note, text)
         print(f"exported {len(self.notes)} posts to {self.out}, skipped {self.drafts} drafts")
 
+    def export_pages(self, content: Path) -> None:
+        """Export each note in the vault's site/ folder to content/<name>/index.md, as is."""
+        for note in self.pages:
+            text = note.read_text()
+            fm = FRONT_MATTER.match(text)
+            header, body = (fm.group(1), text[fm.end() :]) if fm else ("", text)
+            bundle = content / slugify(note.stem)
+            shutil.rmtree(bundle, ignore_errors=True)
+            body = self.convert(note, bundle, body)
+            bundle.mkdir(parents=True)
+            (bundle / "index.md").write_text(f"---\n{GENERATED_NOTE}{header}\n---\n{body}")
+        if self.pages:
+            print(f"exported {len(self.pages)} site pages to {content}")
+
 
 def read_group(s: str, i: int) -> tuple[str, int]:
     """Read a balanced {...} group starting at s[i]; return its content and the index after it."""
@@ -255,7 +274,9 @@ def main(
     macros: Path = Path("data/math_macros.json"),
 ) -> None:
     vault = vault.expanduser()
-    Exporter(vault, out).run()
+    exporter = Exporter(vault, out)
+    exporter.run()
+    exporter.export_pages(out.parent)
     export_macros(vault, macros)
 
 
