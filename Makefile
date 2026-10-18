@@ -1,13 +1,11 @@
 get-hugo:
-	wget https://github.com/gohugoio/hugo/releases/download/v0.150.1/hugo_0.150.1_linux-amd64.tar.gz
-	mkdir -p bin/
-	tar -xzf hugo_0.150.1_linux-amd64.tar.gz -C bin/
-	rm hugo_0.150.1_linux-amd64.tar.gz
-	chmod +x bin/hugo
-	./bin/hugo version
+	VERSION=$$(curl -fsSL https://api.github.com/repos/gohugoio/hugo/releases/latest | grep -Po '"tag_name": "v\K[^"]+') && \
+	mkdir -p ~/.local/bin && \
+	curl -fsSL https://github.com/gohugoio/hugo/releases/download/v$$VERSION/hugo_$${VERSION}_linux-amd64.tar.gz | tar -xz -C ~/.local/bin hugo
+	hugo version
 
 build:
-	./bin/hugo build
+	hugo build
 
 serve:
-	./bin/hugo server
+	hugo server
