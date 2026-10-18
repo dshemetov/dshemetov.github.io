@@ -14,3 +14,7 @@ build:
 # Serve locally; pass -D to include drafts
 serve *args:
     hugo server {{ args }}
+
+# Export blog posts from the Obsidian vault into content/blog
+sync:
+    uv run scripts/vault_export.py "{{ vault }}"
