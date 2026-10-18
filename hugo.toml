@@ -6,6 +6,7 @@ copyright = "Copyright © 2026"
 locale = "en-us"
 enableRobotsTXT = true
 image = "https://dshemetov.github.io/images/math-dmitry.jpg"
+capitalizeListTitles = false
 
 disableKinds = ["taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
