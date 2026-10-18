@@ -34,10 +34,12 @@ We can get even more terms in this approximation with the [Euler-Maclaurin formu
 Let's look at the details of this formula.
 Suppose we have a function $f: \R \to \R$ that is continuously differentiable $p$ many times on $[n, m]$.
 Defining the quantities
+$$
 \begin{align*}
-S & = \sum\_{i=n}^m f(i) \\\
+S & = \sum_{i=n}^m f(i) \\
  I & = \int_n^m f(x) dx,
 \end{align*}
+$$
 we have
 
 $$
@@ -78,10 +80,12 @@ $$
 ### Bernoulli Polynomials
 
 The [Bernoulli polynomials](https://en.wikipedia.org/wiki/Bernoulli_polynomials) $B_k(x)$, in turn, are defined recursively via
+$$
 \begin{align*}
-B\'\_k(x) & = k B\_{k-1}(x), \\\
+B'_k(x) & = k B_{k-1}(x), \\
  \int_0^1 B_k(x) dx & = 0.
 \end{align*}
+$$
 An explicit formula is
 
 $$
@@ -91,11 +95,13 @@ $$
 ### Low-Order Terms of the Euler-Maclaurin Formula
 
 Returning to the Euler-Maclaurin formula, we can write out a few low order terms
+$$
 \begin{align*}
-\sum\_{i=n}^m f(i) & = \int_n^m f(x) dx + \frac{f(n) + f(m)}2 + \int_n^m f\'(x) P_1(x) dx \\\
- & = \int_n^m f(x) dx + \frac{f(n) + f(m)}2 + \frac 1 6 \frac{f\'(m) - f\'(n)}{2!} - \int_n^m f\'\'(x) \frac{P_2(x)}{2!} dx \\\
- & = \int_n^m f(x) dx + \frac{f(n) + f(m)}2 + \frac 1 6 \frac{f\'(m) - f\'(n)}{2!} + \int_n^m f\'\'\'(x) \frac{P_3(x)}{3!} dx.
+\sum_{i=n}^m f(i) & = \int_n^m f(x) dx + \frac{f(n) + f(m)}2 + \int_n^m f'(x) P_1(x) dx \\
+ & = \int_n^m f(x) dx + \frac{f(n) + f(m)}2 + \frac 1 6 \frac{f'(m) - f'(n)}{2!} - \int_n^m f''(x) \frac{P_2(x)}{2!} dx \\
+ & = \int_n^m f(x) dx + \frac{f(n) + f(m)}2 + \frac 1 6 \frac{f'(m) - f'(n)}{2!} + \int_n^m f'''(x) \frac{P_3(x)}{3!} dx.
 \end{align*}
+$$
 
 ### Darboux Formula
 

@@ -29,12 +29,12 @@ $$
     p_P (k; \lambda ) = e^{-\lambda} \frac{\lambda^k}{k!}.
 $$
 
-**Theorem 1:** The sequence of random variables $\\{ X_n \\}_{i=1}^\infty$ with $X_n \sim \text{Bi}(n, \frac \lambda n)$ limits in distribution to $\text{Po}(\lambda)$ as $n \to \infty$.
+**Theorem 1:** The sequence of random variables $\{ X_n \}_{i=1}^\infty$ with $X_n \sim \text{Bi}(n, \frac \lambda n)$ limits in distribution to $\text{Po}(\lambda)$ as $n \to \infty$.
 
 _Proof:_ We want to show that for a fixed $k$
 
 $$
-    \lim_{n \to \infty} \underbrace{{n \choose k} \left(\frac \lambda n \right)^k \left(1 - \frac \lambda n \right)^{n-k}}\_{\text{Binomial pmf}} = \underbrace{e^{-\lambda} \frac{\lambda^k}{k!}}\_{\text{Poisson pmf}}
+    \lim_{n \to \infty} \underbrace{{n \choose k} \left(\frac \lambda n \right)^k \left(1 - \frac \lambda n \right)^{n-k}}_{\text{Binomial pmf}} = \underbrace{e^{-\lambda} \frac{\lambda^k}{k!}}_{\text{Poisson pmf}}
 $$
 
 The limit
@@ -72,12 +72,14 @@ How do we derive it though?
 
 _Proof sketch:_
 
+$$
 \begin{align}
-n! & = \int_0^\infty x^n e^{-x} dx & \tag{Definition} \\\
- & = \int_0^\infty e^{n \ln x - x} dx & \tag{Algebra} \\\
- & = e^{n \ln n} n \int_0^\infty e^{n (\ln y - x)} dy & \tag{Change of Variables} \\\
+n! & = \int_0^\infty x^n e^{-x} dx & \tag{Definition} \\
+ & = \int_0^\infty e^{n \ln x - x} dx & \tag{Algebra} \\
+ & = e^{n \ln n} n \int_0^\infty e^{n (\ln y - x)} dy & \tag{Change of Variables} \\
  & \sim \sqrt{\frac{2\pi} n} e^{-n} n e^{n \ln n} & \tag{Laplace's Method}
 \end{align}
+$$
 
 This gives us the relation we want $\Box$.
 

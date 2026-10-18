@@ -20,7 +20,7 @@ We're going to give an argument based on [Legendre's formula](https://en.wikiped
 **Theorem 1**: Legendre's formula gives the highest power of a prime $p$ dividing $n!$ by
 $$\nu_p(n!) \coloneqq \sum_{i=1}^\infty \left\lfloor \frac n {p^i} \right\rfloor.$$
 
-_Proof_: the proof is a straight-forward counting argument. In $\\{1, \dots, n\\}$, there are $\left\lfloor \frac n p \right\rfloor$ many numbers divisible by $p$.
+_Proof_: the proof is a straight-forward counting argument. In $\{1, \dots, n\}$, there are $\left\lfloor \frac n p \right\rfloor$ many numbers divisible by $p$.
 Each of these contribute at least one power of $p$ to the factorial, but at first pass we count just one.
 Then $\left\lfloor \frac n {p^2} \right\rfloor$ counts the numbers divisible by $p^2$.
 Each of these contribute at least two powers of $p$ to the factorial, but we already counted one in the previous step, and at this step we only count one more.
@@ -47,12 +47,14 @@ We'll give a bounding argument due to [Ivan Niven](https://www.tandfonline.com/d
 $$\sum_{p \leq n \text{ prime}} \frac 1 p > \log \log (n+1) - \log \frac {\pi^2} 6.$$
 
 _Proof_: the outline of the proof is as follows
+$$
 \begin{align}
-\log(n+1) & < \sum_{i=1}^n \frac 1 i \\\
-& \leq \prod_{p \leq n \text{ prime}} \left( 1 + \frac 1 p \right) \sum_{k=1}^n \frac 1 {k^2} \\\
-& < \frac {\pi^2} 6 \prod_{p \leq n \text{ prime}} \exp \left( \frac 1 p \right) \\\
-% & = \frac {\pi^2} 6 \exp \left( \sum\_{p \leq n \text{ prime}} \frac 1 p \right). \\\
+\log(n+1) & < \sum_{i=1}^n \frac 1 i \\
+& \leq \prod_{p \leq n \text{ prime}} \left( 1 + \frac 1 p \right) \sum_{k=1}^n \frac 1 {k^2} \\
+& < \frac {\pi^2} 6 \prod_{p \leq n \text{ prime}} \exp \left( \frac 1 p \right) \\
+% & = \frac {\pi^2} 6 \exp \left( \sum_{p \leq n \text{ prime}} \frac 1 p \right). \\
 \end{align}
+$$
 
 Dividing through by $\pi^2/6$ and taking the log, gives the desired result.
 

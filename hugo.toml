@@ -27,7 +27,7 @@ dateFormat = "2006-01-02"
 enable = true
 [markup.goldmark.extensions.passthrough.delimiters]
 block = [['\[', '\]'], ['$$', '$$']]
-inline = [['\(', '\)']]
+inline = [['\(', '\)'], ['$', '$']]
 
 [markup.highlight]
 # https://gohugo.io/quick-reference/syntax-highlighting-styles/#doom-one2

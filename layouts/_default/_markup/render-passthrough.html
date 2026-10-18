@@ -1,0 +1,6 @@
+{{- /* Hugo's template escaping keeps characters like < as text for MathJax. */ -}}
+{{- if eq .Type "block" -}}
+\[{{ .Inner }}\]
+{{- else -}}
+\({{ .Inner }}\)
+{{- end -}}
