@@ -3,7 +3,7 @@ theme = "hugo-bearblog"
 title = "ʕ·ᴥ·ʔ Dmitry's Internet Website"
 author = "Dmitry Shemetov"
 copyright = "Copyright © 2026"
-languageCode = "en-us"
+locale = "en-us"
 enableRobotsTXT = true
 image = "https://dshemetov.github.io/images/math-dmitry.jpg"
 
