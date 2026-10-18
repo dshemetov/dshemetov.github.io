@@ -3,8 +3,8 @@
 <h1>{{ .Title }}</h1>
 <p>
   <i>
-    <time datetime='{{ .Date.Format "2006-01-02" }}'>
-      {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+    <time datetime='{{ .Date.Format "2006-01-02T15:04:05-07:00" }}'>
+      {{ .Date.Format "2006-01-02 15:04" }}
     </time>
   </i>
 </p>
