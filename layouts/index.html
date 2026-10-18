@@ -2,11 +2,18 @@
 {{ .Content }}
 <div class="stream">
   {{ range first 20 (where site.RegularPages "Section" "blog") }}
+  {{- /* Posts over 300 words show an excerpt; a longform property overrides that. */ -}}
+  {{ $longform := gt .WordCount 300 }}
+  {{ if isset .Params "longform" }}{{ $longform = .Params.longform }}{{ end }}
   <article class="entry">
     <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
     <p class="entry-date"><i>{{ partial "date-long.html" .Date }}</i></p>
-    {{ .Summary }}
-    {{ if .Truncated }}<p><a href="{{ .Permalink }}">Read more →</a></p>{{ end }}
+    {{ if $longform }}
+      {{ partial "excerpt.html" . }}
+      <p><a href="{{ .Permalink }}">[… {{ lang.FormatNumber 0 .WordCount }} words]</a></p>
+    {{ else }}
+      {{ .Content }}
+    {{ end }}
     {{ partial "entry-footer.html" . }}
   </article>
   {{ end }}

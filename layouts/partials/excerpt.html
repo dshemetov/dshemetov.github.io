@@ -1,0 +1,7 @@
+{{- /* The first text paragraph of a post, followed by its first image if it has one. */ -}}
+{{- $paragraph := "" -}}
+{{- range findRE `(?s)<p>.*?</p>` .Content -}}
+  {{- if and (not $paragraph) (not (strings.Contains . "<img")) }}{{ $paragraph = . }}{{ end -}}
+{{- end -}}
+{{ $paragraph | safeHTML }}
+{{ with findRE `(?s)<figure.*?</figure>|<img[^>]*>` .Content 1 }}{{ index . 0 | safeHTML }}{{ end }}

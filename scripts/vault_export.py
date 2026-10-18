@@ -25,7 +25,10 @@ GENERATED_NOTE = "# Generated from the Obsidian vault by scripts/vault_export.py
 FRONT_MATTER = re.compile(r"\A---\n(.*?)\n---\n?", re.S)
 CODE = re.compile(r"(^```.*?^```[^\n]*$|`[^`\n]+`)", re.S | re.M)
 COMMENT = re.compile(r"%%.*?%%", re.S)
-EMBED = re.compile(r"!\[\[([^\]|#]+)(?:#[^\]|]*)?(?:\|([^\]]*))?\]\]")
+# An image embed, optionally followed by an italic caption line like *A caption.*
+EMBED = re.compile(
+    r"!\[\[([^\]|#]+)(?:#[^\]|]*)?(?:\|([^\]]*))?\]\](?:\n([*_])(?!\3)(.+?)\3[ \t]*$)?", re.M
+)
 MD_IMAGE = re.compile(r"!\[([^\]]*)\]\(([^)\s]+)\)")
 WIKILINK = re.compile(r"\[\[([^\]|#]+)(?:#([^\]|]*))?(?:\|([^\]]*))?\]\]")
 
@@ -87,8 +90,15 @@ class Exporter:
             dest = self.copy_image(note, bundle, target)
             if dest is None:
                 return m.group(0)
-            if re.fullmatch(r"\d+(x\d+)?", option):
-                return f'{{{{< figure src="{dest}" width="{option.split("x")[0]}" >}}}}'
+            width = option.split("x")[0] if re.fullmatch(r"\d+(x\d+)?", option) else None
+            caption = m.group(4)
+            if width or caption:
+                attrs = f'src="{dest}"'
+                if width:
+                    attrs += f' width="{width}"'
+                if caption:
+                    attrs += f' caption="{caption.replace(chr(34), "&quot;")}"'
+                return f"{{{{< figure {attrs} >}}}}"
             return f"![{option}]({dest})"
 
         def md_image(m: re.Match) -> str:

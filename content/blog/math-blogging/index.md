@@ -103,7 +103,7 @@ A few more Stirling approximation facts:
 - you can get even more terms in the asymptotic expansion[^3] by using the [Euler-Maclaurin formula](https://en.wikipedia.org/wiki/Euler%E2%80%93Maclaurin_formula),
 - a simple bound of $\sqrt{2\pi n} \left( \frac n e \right)^n e^{\frac 1 {12n + 1}} < n! < \sqrt{2\pi n} \left( \frac n e \right)^n e^{\frac 1 {12n}}$ is available due to [Robbins](https://www.jstor.org/stable/2308012).
 
-{{< figure src="/images/pumps2019.jpg" height="400px" width="600px" caption="A bonus test picture." >}}
+{{< figure src="pumps2019.jpg" width="600" caption="A bonus test picture." >}}
 
 ## Footnotes
 

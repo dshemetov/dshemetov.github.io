@@ -6,6 +6,9 @@ tags:
   - TIL
   - gaming
 ---
+
+Surprisingly many things can go wrong with streaming a game from your computer to your TV. Most of these issues came up around this time last year when I played through Silksong, so I figured I'd write them up before I totally forget them (at this point I'm using Sunshine/Moonlight anyway).
+
 When debugging streaming issues with SteamLink, their built-in latency graph is very useful. You might be able to get it to display with F6 or you might just need to go to Settings > Remote Play > Performance Overlay > Show Details. Here is what it looks like (older graphs replace the yellow line with a light blue line):
 
 ![Steam Link performance overlay graph](steamlink.jpeg)
