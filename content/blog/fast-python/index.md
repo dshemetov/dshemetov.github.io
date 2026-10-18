@@ -1,6 +1,6 @@
 ---
 # Generated from the Obsidian vault by scripts/vault_export.py. Edit the note there.
-title: Fast Python
+slug: fast-python
 date: 2023-04-15T17:50:38-08:00
 tags:
   - python
