@@ -3,3 +3,4 @@ public/
 bin/
 .vscode/
 .obsidian/
+__pycache__/

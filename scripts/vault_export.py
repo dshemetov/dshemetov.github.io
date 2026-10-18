@@ -8,6 +8,7 @@ See notes/obsidian-workflow.md for the workflow and conversion rules.
 """
 
 import datetime
+import json
 import re
 import shutil
 import sys
@@ -154,8 +155,63 @@ class Exporter:
         print(f"exported {len(self.notes)} posts to {self.out}")
 
 
-def main(vault: Path, out: Path = Path("content/blog")) -> None:
-    Exporter(vault.expanduser(), out).run()
+def read_group(s: str, i: int) -> tuple[str, int]:
+    """Read a balanced {...} group starting at s[i]; return its content and the index after it."""
+    depth = 0
+    for j in range(i, len(s)):
+        if s[j] == "\\":
+            continue
+        if s[j] == "{" and (j == 0 or s[j - 1] != "\\"):
+            depth += 1
+        elif s[j] == "}" and s[j - 1] != "\\":
+            depth -= 1
+            if depth == 0:
+                return s[i + 1 : j], j + 1
+    raise ValueError(f"unbalanced braces near {s[i : i + 40]!r}")
+
+
+def parse_preamble(text: str) -> dict[str, str | list]:
+    """Turn \\newcommand and \\DeclareMathOperator lines into MathJax macro definitions."""
+    text = re.sub(r"(?<!\\)%.*", "", text)
+    macros: dict[str, str | list] = {}
+    command = re.compile(r"\\(newcommand|renewcommand|DeclareMathOperator)\*?\s*")
+    for m in command.finditer(text):
+        i = m.end()
+        if text[i] == "{":
+            name, i = read_group(text, i)
+        else:
+            name = re.match(r"\\[A-Za-z]+", text[i:]).group(0)
+            i += len(name)
+        n_args = re.match(r"\s*\[(\d)\]", text[i:])
+        if n_args:
+            i += n_args.end()
+        i += len(text[i:]) - len(text[i:].lstrip())
+        body, _ = read_group(text, i)
+        if m.group(1) == "DeclareMathOperator":
+            body = f"\\operatorname{{{body}}}"
+        name = name.strip().lstrip("\\")
+        macros[name] = [body, int(n_args.group(1))] if n_args else body
+    return macros
+
+
+def export_macros(vault: Path, out: Path) -> None:
+    preamble = vault / "preamble.sty"
+    if not preamble.exists():
+        print(f"warning: {preamble} not found, left {out} as is", file=sys.stderr)
+        return
+    macros = parse_preamble(preamble.read_text())
+    out.write_text(json.dumps(dict(sorted(macros.items())), indent=2) + "\n")
+    print(f"exported {len(macros)} math macros to {out}")
+
+
+def main(
+    vault: Path,
+    out: Path = Path("content/blog"),
+    macros: Path = Path("data/math_macros.json"),
+) -> None:
+    vault = vault.expanduser()
+    Exporter(vault, out).run()
+    export_macros(vault, macros)
 
 
 if __name__ == "__main__":

@@ -9,11 +9,8 @@ MathJax = {
     displayMath: [['$$','$$'], ['\\[', '\\]']],
     processEscapes: true,
     processEnvironments: true,
-    macros: {
-        R: '{\\mathbb R}',
-        Z: '{\\mathbb Z}',
-        C: '{\\mathbb C}',
-    },
+    // Generated from the vault's preamble.sty by `just sync`.
+    macros: {{ hugo.Data.math_macros | jsonify | safeJS }},
     packages: {
         '[+]': ['mathtools']
     }

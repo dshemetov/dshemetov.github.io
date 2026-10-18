@@ -21,3 +21,7 @@ Set `OBSIDIAN_VAULT` if the vault lives somewhere else on a machine.
 - `%%comments%%` are removed.
 - Code blocks and inline code are left untouched.
 - Embeds of non-image files (other notes, PDFs) are left as is, with a warning.
+
+## Math macros
+
+Custom LaTeX macros like `\Z` live in `preamble.sty` at the vault root, as `\newcommand` (or `\renewcommand`, `\DeclareMathOperator`) lines. Obsidian loads that file through the Extended MathJax community plugin; after editing it, run Obsidian's "Reload app without saving" command. `just sync` turns the same file into `data/math_macros.json`, which `layouts/partials/math.html` passes to MathJax on the site.
