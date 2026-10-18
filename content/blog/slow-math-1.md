@@ -1,13 +1,12 @@
-+++
-title = "A Diversion Into Number Theory"
-date = "2023-02-18T12:12:48-08:00"
-toc = true
-tags = [
-    "math",
-    "number theory"
-]
-math = true
-+++
+---
+title: A Diversion Into Number Theory
+date: 2023-02-18T12:12:48-08:00
+toc: true
+tags:
+- math
+- number theory
+math: true
+---
 
 My good friend [Jordan](https://jasnyder.github.io/) and I are doing some recreational math together.
 Here are some notes.

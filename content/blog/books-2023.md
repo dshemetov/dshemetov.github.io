@@ -1,8 +1,9 @@
-+++
-title = "Books 2023"
-date = "2023-08-13T22:51:13-07:00"
-tags = ["books"]
-+++
+---
+title: Books 2023
+date: 2023-08-13T22:51:13-07:00
+tags:
+- books
+---
 
 Here are a few books I read this year:
 

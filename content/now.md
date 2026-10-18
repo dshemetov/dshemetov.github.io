@@ -1,8 +1,8 @@
-+++
-title = "Now"
-menu = "main"
-weight = 10
-+++
+---
+title: Now
+menu: main
+weight: 10
+---
 # Now
 
 _Updated: 2025-09-28_ (this is a [now page](https://nownownow.com/about)).

@@ -1,11 +1,10 @@
-+++
-title = "Unicode, String Encodings, and Python"
-date = "2022-09-01T11:20:59-07:00"
-toc = true
-tags = [
-    "python"
-]
-+++
+---
+title: Unicode, String Encodings, and Python
+date: 2022-09-01T11:20:59-07:00
+toc: true
+tags:
+- python
+---
 
 I've been working on the [cryptopals challenges](https://www.cryptopals.com/) and avoiding stock libraries, to learn more about string encodings and the `bytes` type in Python 3.
 So here, we'll learn way more than we need to know about Unicode.

@@ -1,13 +1,12 @@
-+++
-title = "Math Blogging"
-date = "2019-11-07"
-tags = [
-    "math",
-    "blogging",
-    "hugo"
-]
-math = true
-+++
+---
+title: Math Blogging
+date: 2019-11-07
+tags:
+- math
+- blogging
+- hugo
+math: true
+---
 
 A few cute derivations to test math blogging with [Hugo](https://gohugo.io).
 

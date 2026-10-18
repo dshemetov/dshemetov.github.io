@@ -1,8 +1,9 @@
-+++
-title = "Sketches EP"
-date = "2023-04-17T22:50:55-07:00"
-tags = ["music",]
-+++
+---
+title: Sketches EP
+date: 2023-04-17T22:50:55-07:00
+tags:
+- music
+---
 
 I made an album of improvised acoustic guitar songs this February.
 It's here on [Bandcamp](https://flyingskeletonhand.bandcamp.com/album/sketches).

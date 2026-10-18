@@ -1,13 +1,11 @@
-+++
-title = "A Few Facts About Fibonacci Numbers"
-date = "2019-12-05T14:04:04-08:00"
-# toc = true
-tags = [
-	"math",
-	"number theory"
-]
-math = true
-+++
+---
+title: A Few Facts About Fibonacci Numbers
+date: 2019-12-05T14:04:04-08:00
+tags:
+- math
+- number theory
+math: true
+---
 
 More [math blog testing](/blog/math-blogging). From a number theory course I graded a few years ago.
 
