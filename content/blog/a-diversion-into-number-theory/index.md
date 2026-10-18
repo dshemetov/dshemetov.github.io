@@ -6,6 +6,9 @@ toc: true
 tags:
   - math
 math: true
+slug: number-theory
+aliases:
+  - /a-diversion-into-number-theory/
 ---
 
 My good friend [Jordan](https://jasnyder.github.io/) and I are doing some recreational math together.

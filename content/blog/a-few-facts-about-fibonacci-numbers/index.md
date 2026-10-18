@@ -5,6 +5,9 @@ date: 2019-12-05T14:04:04-08:00
 tags:
   - math
 math: true
+slug: fibonacci-numbers
+aliases:
+  - /a-few-facts-about-fibonacci-numbers/
 ---
 
 More [math blog testing]({{< relref "/blog/math-blogging" >}}). From a number theory course I graded a few years ago.

@@ -1,9 +1,12 @@
 ---
 # Generated from the Obsidian vault by scripts/vault_export.py. Edit the note there.
-slug: books-2023
+title: Recent Books
 date: 2023-08-13T22:51:13-07:00
 tags:
   - books
+slug: books-2023
+aliases:
+  - /books-2023/
 ---
 
 A few books I read this year:

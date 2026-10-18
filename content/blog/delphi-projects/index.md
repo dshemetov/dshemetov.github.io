@@ -1,8 +1,13 @@
 ---
 # Generated from the Obsidian vault by scripts/vault_export.py. Edit the note there.
-slug: delphi-projects
 date: 2023-11-13T22:51:13-07:00
+slug: delphi-projects
+aliases:
+  - /delphi-projects/
+title: Recent Delphi Projects
 ---
+> Test quote block.
+> - Source Name, "Here".
 
 A large portion of my work at Delphi has involved producing R packages for epidemiological data processing and forecasting. This includes:
 

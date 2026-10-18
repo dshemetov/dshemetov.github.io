@@ -33,8 +33,17 @@ MD_IMAGE = re.compile(r"!\[([^\]]*)\]\(([^)\s]+)\)")
 WIKILINK = re.compile(r"\[\[([^\]|#]+)(?:#([^\]|]*))?(?:\|([^\]]*))?\]\]")
 
 
+STOPWORDS = {"a", "an", "the", "of", "and", "or", "in", "into", "on", "for", "to", "with", "about", "via"}
+
+
 def slugify(s: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
+
+
+def short_slug(s: str) -> str:
+    """The first two non-stopword words of s, as a URL slug."""
+    words = slugify(s).split("-")
+    return "-".join([w for w in words if w not in STOPWORDS][:2] or words[:2])
 
 
 def warn(note: Path, msg: str) -> None:
@@ -127,31 +136,36 @@ class Exporter:
         parts = CODE.split(text)
         return "".join(p if i % 2 else transform(p) for i, p in enumerate(parts))
 
-    def ensure_date(self, note: Path, text: str, fm: re.Match | None) -> str:
-        """Write a missing date back into the vault note so it stays stable."""
-        now = datetime.datetime.now().astimezone().replace(microsecond=0).isoformat()
+    def ensure_field(self, note: Path, text: str, key: str, value: str) -> str:
+        """Write a missing front-matter field back into the vault note so it stays stable."""
+        line = f"{key}: {value}"
+        fm = FRONT_MATTER.match(text)
         if fm:
-            text = f"---\n{fm.group(1)}\ndate: {now}\n---\n" + text[fm.end() :]
+            text = f"---\n{fm.group(1)}\n{line}\n---\n" + text[fm.end() :]
         else:
-            text = f"---\ndate: {now}\n---\n\n" + text
+            text = f"---\n{line}\n---\n\n" + text
         note.write_text(text)
-        warn(note, f"no date, wrote date: {now} to the vault note")
+        warn(note, f"no {key}, wrote {line} to the vault note")
         return text
 
-    def export_note(self, note: Path) -> None:
+    def prepare(self, note: Path) -> str:
+        """Fill in a missing date and slug, which together fix the post's URL."""
         text = note.read_text()
-        fm = FRONT_MATTER.match(text)
         data = read_front_matter(text)
         if "date" not in data:
-            text = self.ensure_date(note, text, fm)
-            fm = FRONT_MATTER.match(text)
+            now = datetime.datetime.now().astimezone().replace(microsecond=0).isoformat()
+            text = self.ensure_field(note, text, "date", now)
+        if not data.get("slug"):
+            text = self.ensure_field(note, text, "slug", short_slug(note.stem))
+        return text
+
+    def export_note(self, note: Path, text: str) -> None:
+        fm = FRONT_MATTER.match(text)
         header = fm.group(1)
-        slug = self.slugs[note.stem.lower()]
-        if not data.get("title"):
-            # Untitled posts show their date as the title; the slug keeps the URL tied to the filename.
+        if not read_front_matter(text).get("title"):
+            # Untitled posts show their date as the title.
             header = re.sub(r"^title:.*\n?", "", header, flags=re.M)
-            header = f"slug: {yaml.safe_dump(slug).splitlines()[0]}\n{header}"
-        bundle = self.out / slug
+        bundle = self.out / self.slugs[note.stem.lower()]
         body = self.convert(note, bundle, text[fm.end() :])
         bundle.mkdir(parents=True, exist_ok=True)
         (bundle / "index.md").write_text(f"---\n{GENERATED_NOTE}{header}\n---\n{body}")
@@ -165,13 +179,24 @@ class Exporter:
             if slug in seen:
                 sys.exit(f"{note} and {seen[slug]} both map to /blog/{slug}/")
             seen[slug] = note
+        texts = {note: self.prepare(note) for note in self.notes}
+        urls: dict[str, Path] = {}
+        for note, text in texts.items():
+            data = read_front_matter(text)
+            date = data["date"]
+            if isinstance(date, str):
+                date = datetime.datetime.fromisoformat(date)
+            url = f"/{date:%Y/%m/%d}/{data['slug']}/"
+            if url in urls:
+                sys.exit(f"{note} and {urls[url]} both map to {url}, change one slug")
+            urls[url] = note
         for p in self.out.iterdir():
             if p.is_dir():
                 shutil.rmtree(p)
             elif p.name != "_index.md":
                 p.unlink()
-        for note in self.notes:
-            self.export_note(note)
+        for note, text in texts.items():
+            self.export_note(note, text)
         print(f"exported {len(self.notes)} posts to {self.out}, skipped {self.drafts} drafts")
 
 

@@ -6,6 +6,9 @@ toc: true
 tags:
   - math
 math: true
+slug: fast-pi
+aliases:
+  - /fast-algorithms-for-pi-and-elliptic-integrals/
 ---
 
 On this installment of Chill Math Friends, we learned a bit about a fast algorithm for $\pi$ and elliptic integrals.

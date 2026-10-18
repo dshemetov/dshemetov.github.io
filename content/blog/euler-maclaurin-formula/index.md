@@ -6,6 +6,9 @@ toc: true
 tags:
   - math
 math: true
+slug: euler-maclaurin
+aliases:
+  - /euler-maclaurin-formula/
 ---
 
 In the [math test post]({{< relref "/blog/math-blogging" >}}), we briefly discussed how to arrive at Stirling's approximation.

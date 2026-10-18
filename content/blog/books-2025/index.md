@@ -1,10 +1,13 @@
 ---
 # Generated from the Obsidian vault by scripts/vault_export.py. Edit the note there.
-slug: books-2025
+title: Recent Books
 date: 2025-10-17T20:56:11-07:00
 tags:
   - books
 draft: false
+slug: books-2025
+aliases:
+  - /books-2025/
 ---
 
 A few books I read recently:

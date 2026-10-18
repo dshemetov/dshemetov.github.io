@@ -5,6 +5,9 @@ date: 2019-11-07T14:04:04-08:00
 tags:
   - math
 math: true
+slug: math-blogging
+aliases:
+  - /math-blogging/
 ---
 
 A few cute derivations to test math blogging with [Hugo](https://gohugo.io).

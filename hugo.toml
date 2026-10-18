@@ -12,7 +12,7 @@ disableKinds = ["taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
 
 [permalinks]
-blog = "/:slug/"
+blog = "/:year/:month/:day/:slug/"
 tags = "/blog/:slug"
 
 [params]

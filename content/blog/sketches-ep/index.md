@@ -1,9 +1,12 @@
 ---
 # Generated from the Obsidian vault by scripts/vault_export.py. Edit the note there.
-slug: sketches-ep
+title: Sketches EP
 date: 2023-04-17T22:50:55-07:00
 tags:
   - music
+slug: sketches-ep
+aliases:
+  - /sketches-ep/
 ---
 
 I made an album of improvised acoustic guitar songs this February.

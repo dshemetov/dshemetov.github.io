@@ -6,6 +6,9 @@ toc: true
 tags:
   - python
   - software
+slug: unicode-python
+aliases:
+  - /unicode-string-encodings-and-python/
 ---
 
 I've been working on the [cryptopals challenges](https://www.cryptopals.com/) and avoiding stock libraries, to learn more about string encodings and the `bytes` type in Python 3.
